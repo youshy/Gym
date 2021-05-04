@@ -2,7 +2,20 @@
 
 > Newest logs on top.
 
-## 03.05.1993
+## 04.05.2021
+
+Type: Push
+
+Warmup: 0.5km run
+
+* Dumbbell Press: 16kg
+* Military Press: 25kg
+* Pecs Fly: 39kg
+* Triceps Press/Lateral Raises: (3x8 both) 8kg
+
+3x15 Leg Raises
+
+## 03.05.2021
 
 Type: Pull
 
