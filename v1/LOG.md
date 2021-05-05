@@ -2,6 +2,14 @@
 
 > Newest logs on top.
 
+## 05.05.2021
+
+Type: Legs
+
+7km / 15min bike (jesus, that was soooo gooood!)
+
+---
+
 ## 04.05.2021
 
 Type: Push
@@ -14,6 +22,8 @@ Warmup: 0.5km run
 * Triceps Press/Lateral Raises: (3x8 both) 8kg
 
 3x15 Leg Raises
+
+---
 
 ## 03.05.2021
 
