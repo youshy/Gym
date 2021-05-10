@@ -2,6 +2,22 @@
 
 > Newest logs on top.
 
+## 10.05.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* KB Row: 2x24kg
+* Negative Pullups: 3x3
+* Cable Rows: 39kg
+* Push Ups: 1s pause
+* Hammer Curls: 7,5kg
+
+10km / 23min bike (BIKE IS AWESOME)
+
+---
+
 ## 07.05.2021
 
 Type: Push
