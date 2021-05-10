@@ -6,19 +6,19 @@ Start Date: 03.01.2021
 
 End Date:
 
-Order: Pull Push Legs Pull Push Legs Rest
+Order: Pull Push/Legs Cardio Pull Push/Legs Rest Rest
 
 # Program
 
 ## Pull
 
 * 5x5 Barbell Rows
-* 3x10 TRX Pull ups
+* 3x5-10 Negative Pull ups
 * 3x10 Cable Rows
 * 3x10 Push ups w/ 3s pause
 * 3x10 Hammer curls
 
-If after rest - 15-20 minutes run, if after legs, no run
+15-20min bike
 
 ## Push
 
@@ -33,9 +33,10 @@ If after rest - 15-20 minutes run, if after legs, no run
 * 3x6 Locked Plank w/ Hip Raise
 * 3x6 12kg One-Leg Dumbbell Deadlift
 
-15-20 minutes run
+15-20min bike
 
 # Notes
 
 * Legs are mainly focusing on rehabilitation
 * Weights - less than more, focus on not breaking myself again
+* Bike is amazing, running sucks
