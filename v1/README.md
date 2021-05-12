@@ -6,7 +6,7 @@ Start Date: 03.01.2021
 
 End Date:
 
-Order: Pull Push/Legs Cardio Pull Push/Legs Rest Rest
+Order: Pull | Push/Legs | Cardio | Pull/Legs | Push | Rest | Rest
 
 # Program
 
