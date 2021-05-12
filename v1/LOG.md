@@ -2,6 +2,14 @@
 
 > Newest logs on top.
 
+## 12.05.2021
+
+Type: Cardio
+
+* 12,6km / 30min bike
+
+---
+
 ## 11.05.2021
 
 Type: Push
