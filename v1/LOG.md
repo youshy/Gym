@@ -2,6 +2,21 @@
 
 > Newest logs on top.
 
+## 13.05.2021
+
+Type: Pull & Legs
+
+Warmup: 1,25km row
+
+* BB Row: 45kg
+* Lateral Pull: 3x8 @ 66kg (heavy af)
+* Cable Row: 39kg
+* Air Squats: 20
+* One-leg deadlift: 12kg
+* Hammer curls: 8kg
+
+---
+
 ## 12.05.2021
 
 Type: Cardio
