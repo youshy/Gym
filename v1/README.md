@@ -13,7 +13,7 @@ Order: Pull | Push/Legs | Cardio | Pull/Legs | Push | Rest | Rest
 ## Pull
 
 * 5x5 Barbell Rows
-* 3x5-10 Negative Pull ups
+* 3x8 Lateral Pull
 * 3x10 Cable Rows
 * 3x10 Push ups w/ 3s pause
 * 3x10 Hammer curls
@@ -40,3 +40,4 @@ Order: Pull | Push/Legs | Cardio | Pull/Legs | Push | Rest | Rest
 * Legs are mainly focusing on rehabilitation
 * Weights - less than more, focus on not breaking myself again
 * Bike is amazing, running sucks
+* Lateral pull makes more sense than any kind of fake pullups at this stage
