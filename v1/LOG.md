@@ -2,6 +2,23 @@
 
 > Newest logs on top.
 
+## 14.05.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 18kg
+* Military Press: 30kg
+* Pecs Fly: 45kg
+* Triceps Press/Lateral Raises: 8kg, 3x10/12
+
+10km / 24:06min bike (BIKE RULES)
+
+> post-training note: supersets can go up to 10kg, reduce reps by two
+
+---
+
 ## 13.05.2021
 
 Type: Pull & Legs
