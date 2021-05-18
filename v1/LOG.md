@@ -2,7 +2,22 @@
 
 > Newest logs on top.
 
-## 17.04.2021
+## 18.05.2021
+
+Type: Push
+
+Warmup: 1km row
+
+* Dumbbell Press: 20kg
+* Military Press: 35kg (might slow down progress to +2,5kg per week)
+* Pecs Fly: 52kg
+* Air Squats: 30
+* One-leg deadlifts: 3x8 @ 12kg
+* Triceps Press/Lateral Raises: 8kg, 3x10/12
+
+---
+
+## 17.05.2021
 
 Type: Pull
 
