@@ -2,6 +2,25 @@
 
 > Newest logs on top.
 
+## 21.05.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 20kg
+* Military Press: 35kg
+* Pecs Fly: 52kg
+* Air Squats: 30
+* One-leg deadlifts: 3x8 @ 12kg
+* Triceps Press/Lateral Raises: 10kg, 3x10/10
+
+10km / 19:11min (PERSONAL BEST, try to keep all cardio sessions under 20 minutes)
+
+> Triceps Press can stay on 10 until I feel stronger. Laterals @ 10kg are great. Military press 2,5kg up MAX.
+
+---
+
 ## 20.05.2021
 
 Type: Pull
