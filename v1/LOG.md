@@ -2,6 +2,22 @@
 
 > Newest logs on top.
 
+## 24.05.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* BB Row: 55kg
+* Lateral Pull: 3x8 @ 72kg 
+* Cable Row: 52kg
+* Push ups: 3x10
+* Hammer curls: 3x8 @ 12kg
+
+10km / 
+
+---
+
 ## 21.05.2021
 
 Type: Push
