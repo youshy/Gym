@@ -14,7 +14,7 @@ Warmup: 1,25km row
 * Push ups: 3x10
 * Hammer curls: 3x8 @ 12kg
 
-10km / 
+10km / 19:13min
 
 ---
 
