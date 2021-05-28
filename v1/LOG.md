@@ -2,6 +2,21 @@
 
 > Newest logs on top.
 
+## 28.05.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 22kg
+* Military Press: 37,5kg (can go 40kg easy)
+* Chest Press: 3x10 10.2kg per hand
+* Triceps Press/Lateral Raises: 10kg, 3x10/10
+
+10km / 18:38min
+
+---
+
 ## 27.05.2021
 
 Type: Pull
