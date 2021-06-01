@@ -2,6 +2,21 @@
 
 > Newest logs on top.
 
+## 01.06.2021
+
+Type: Push
+
+Warmup: 1,25km
+
+* Dumbbell Press: 24kg
+* Military Press: 40kg
+* Chest Fly: 12,5kg ph
+* Air Squats: 30
+* One-leg deadlifts: 3x10 @ 16kg
+* Triceps Press/Lateral Raises: 10kg, 3x10/10
+
+---
+
 ## 31.05.2021
 
 Type: Pull
