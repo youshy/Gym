@@ -2,6 +2,24 @@
 
 > Newest logs on top.
 
+## 07.06.2021
+
+Type: Pull
+
+Warmup: 0,5km Air Bike
+
+* BB Row: 62,5kg
+* Inverted db row: 3x10 @ 16kg
+* Improvised lateral pull: 3x10 @ 50kg/64kg/64kg
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 12kg
+
+10km / 19:00min
+
+> Never ever going to the gym after 7am...
+
+---
+
 ## 04.06.2021
 
 Type: Push
