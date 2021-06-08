@@ -2,6 +2,24 @@
 
 > Newest logs on top.
 
+## 08.06.2021
+
+Type: Push
+
+Warmup: 960m (fucking knee)
+
+* Dumbbell Press: 26kg
+* Military Press: 42,5kg
+* Pecs Fly: 66kg
+* Air Squats: 30
+* One-leg deadlifts: 3x10 @ 16kg
+* Triceps Press/Lateral Raises: 10kg, 3x10/10
+
+> DELOAD INCOMING FROM 14.06
+> Dumbbell press were hard as shit
+
+---
+
 ## 07.06.2021
 
 Type: Pull
