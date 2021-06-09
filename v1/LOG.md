@@ -2,6 +2,16 @@
 
 > Newest logs on top.
 
+## 09.06.2021
+
+Type: Cardio
+
+10km / 21:08min
+
+> Rest is definitely needed
+
+---
+
 ## 08.06.2021
 
 Type: Push
@@ -16,6 +26,7 @@ Warmup: 960m (fucking knee)
 * Triceps Press/Lateral Raises: 10kg, 3x10/10
 
 > DELOAD INCOMING FROM 14.06
+>
 > Dumbbell press were hard as shit
 
 ---
