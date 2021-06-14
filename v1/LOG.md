@@ -2,6 +2,26 @@
 
 > Newest logs on top.
 
+## 14.06.2021
+
+> Deload week
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* BB Row: 55kg
+* Lateral Pull: 3x8 @ 72kg 
+* Cable Row: 52kg
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 10kg
+
+5 mins walk
+
+> Dumbass bikes wasn't working...
+
+---
+
 ## 09.06.2021
 
 Type: Cardio
