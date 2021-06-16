@@ -2,6 +2,16 @@
 
 > Newest logs on top.
 
+## 16.06.2021
+
+> Deload week
+
+Type: Cardio
+
+15km / 30:04min
+
+---
+
 ## 15.06.2021
 
 > Deload week
