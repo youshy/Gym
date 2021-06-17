@@ -2,6 +2,23 @@
 
 > Newest logs on top.
 
+## 17.06.2021
+
+> Deload week & Jab day
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* One hand barbell row: 28kg per side
+* Lateral Pull: 3x8 @ 72kg 
+* Cable Row: 52kg
+* Push ups/Air Squats: 3x10
+* One-leg deadlifts: 3x10 @ 12kg
+* Hammer curls: 3x10 @ 10kg
+
+---
+
 ## 16.06.2021
 
 > Deload week
