@@ -2,6 +2,22 @@
 
 > Newest logs on top.
 
+## 21.06.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* BB Row: 60kg
+* Lateral Pull: 3x8 @ 72 + 2,5? 
+* Cable Row: 52 + 2,5?
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 12kg
+
+10km / <whatever the time will be>
+
+---
+
 ## 17.06.2021
 
 > Deload week & Jab day
