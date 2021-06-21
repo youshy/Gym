@@ -8,13 +8,13 @@ Type: Pull
 
 Warmup: 1,25km row
 
-* BB Row: 60kg
-* Lateral Pull: 3x8 @ 72 + 2,5? 
-* Cable Row: 52 + 2,5?
+* One hand barbell row: 30kg per side
+* Lateral Pull: 3x8 @ 75,3kg
+* Cable Row: 54,3kg
 * Push ups: 3x10
-* Hammer curls: 3x10 @ 12kg
+* Hammer curls: 3x10 @ 12,5kg
 
-10km / <whatever the time will be>
+> No cardio due to fucking class
 
 ---
 
