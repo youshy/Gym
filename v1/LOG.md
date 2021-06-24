@@ -2,6 +2,24 @@
 
 > Newest logs on top.
 
+## 24.06.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* One hand barbell row: 30kg per side
+* Lateral Pull: 3x8 @ 75,3kg
+* Cable Row: 54,3kg
+* Push ups: 3x10
+* Air Squats: 30
+* One-leg deadlifts: 3x10 @ 16kg
+* Hammer curls: 3x10 @ 12,5kg
+
+> Push ups & air squats as supersets
+
+---
+
 ## 23.06.2021
 
 Type: Cardio
