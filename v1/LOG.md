@@ -2,6 +2,26 @@
 
 > Newest logs on top.
 
+## 28.06.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* One hand dumbbell row: 32kg per side
+* Lateral Pull: 3x8 @ 77,6kg
+* Cable Row: 56,6kg
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 12,5kg
+
+> No cardio due to fucking class.
+> 
+> Maybe I need to figure something out here...
+
+---
+
+Type:
+
 ## 25.06.2021
 
 Type: Push
@@ -23,7 +43,7 @@ Type: Pull
 
 Warmup: 1,25km row
 
-* One hand barbell row: 30kg per side
+* One hand dumbbell row: 30kg per side
 * Lateral Pull: 3x8 @ 75,3kg
 * Cable Row: 54,3kg
 * Push ups: 3x10
@@ -64,7 +84,7 @@ Type: Pull
 
 Warmup: 1,25km row
 
-* One hand barbell row: 30kg per side
+* One hand dumbbell row: 30kg per side
 * Lateral Pull: 3x8 @ 75,3kg
 * Cable Row: 54,3kg
 * Push ups: 3x10
@@ -82,7 +102,7 @@ Type: Pull
 
 Warmup: 1,25km row
 
-* One hand barbell row: 28kg per side
+* One hand dumbbell row: 28kg per side
 * Lateral Pull: 3x8 @ 72kg 
 * Cable Row: 52kg
 * Push ups/Air Squats: 3x10
