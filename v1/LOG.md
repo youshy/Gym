@@ -2,6 +2,29 @@
 
 > Newest logs on top.
 
+## 30.06.2021
+
+Type: Cardio
+
+20km / 40:35min
+
+---
+
+## 29.06.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 26kg
+* Military Press: 42,5kg
+* Pecs Fly: 73kg
+* Air Squats: 30
+* One-leg deadlifts: 3x10 @ 16kg
+* Triceps Press/Lateral Raises: 12,5kg, 3x10/10
+
+---
+
 ## 28.06.2021
 
 Type: Pull
