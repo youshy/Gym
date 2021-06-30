@@ -43,8 +43,6 @@ Warmup: 1,25km row
 
 ---
 
-Type:
-
 ## 25.06.2021
 
 Type: Push
