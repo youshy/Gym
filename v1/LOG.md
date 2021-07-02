@@ -2,6 +2,21 @@
 
 > Newest logs on top.
 
+## 02.07.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 26kg
+* Military Press: 42,5kg
+* Pecs Fly: 73kg
+* Triceps Press/Lateral Raises: 12,5kg, 3x10/10
+
+> Tired like a mofo, no cardio today.
+
+---
+
 ## 01.07.2021
 
 Type: Pull
