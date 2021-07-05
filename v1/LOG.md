@@ -2,6 +2,19 @@
 
 > Newest logs on top.
 
+## 05.07.2021
+
+Type: Pull
+
+* One hand dumbbell row: 34kg per side
+* Lateral Pull: 3x8 @ 79kg
+* Cable Row: 59kg
+* Push ups: 3x10
+
+> No hammer curls today as I had to bake bread asap
+
+---
+
 ## 02.07.2021
 
 Type: Push
