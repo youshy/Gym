@@ -2,6 +2,19 @@
 
 > Newest logs on top.
 
+## 06.07.2021
+
+Type: Push
+
+> Didn't want to go through rain to the gym, so I've trained at home
+
+* One hand kettle push, laying down: 2x8 @ 16kg
+* One hand military kettle press: 3x8 @ 16kg
+* Air Squats: 30
+* One-leg deadlifts: 3x10 @ 16kg
+
+---
+
 ## 05.07.2021
 
 Type: Pull
