@@ -2,6 +2,14 @@
 
 > Newest logs on top.
 
+## 07.07.2021
+
+Type: Cardio
+
+20km / 39:40min
+
+---
+
 ## 06.07.2021
 
 Type: Push
