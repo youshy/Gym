@@ -2,6 +2,24 @@
 
 > Newest logs on top.
 
+## 12.07.2021
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* One hand dumbbell row: 38kg per side
+* Lateral Pull: 3x8 @ 81.3kg
+* Cable Row: 61.3kg
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 12,5kg
+
+> Hard AF, only one Pull training this week due to well-deserved time off later this week.
+>
+> And then deload!
+
+---
+
 ## 09.07.2021
 
 Type: Push
