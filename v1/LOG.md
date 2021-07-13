@@ -2,6 +2,22 @@
 
 > Newest logs on top.
 
+## 13.07.2021
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 30kg
+* Military Press: 47,5kg (last round 8 reps)
+* Pecs Fly: 86kg
+* Air Squats: 30
+* One-leg deadlifts: 2x10 @ 16kg
+
+> I'm way too tired. No more workouts this week.
+
+---
+
 ## 12.07.2021
 
 Type: Pull
