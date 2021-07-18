@@ -2,6 +2,22 @@
 
 > Newest logs on top.
 
+## 19.07.2021
+
+> DELOAD WEEK
+
+Type: Pull
+
+Warmup: 1,25km row
+
+* One hand dumbell row: 34km per side
+* Lateral Pull: 3x8
+* Cable Row:
+* Push ups: 3x10
+* Hammer curls: 3x10 @ 10kg
+
+---
+
 ## 13.07.2021
 
 Type: Push
