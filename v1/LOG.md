@@ -2,6 +2,14 @@
 
 > Newest logs on top.
 
+## 20.07 - 25.07
+
+**DICKWEED QUARANTINE.**
+
+I might do some training in-house but we'll see...
+
+---
+
 ## 19.07.2021
 
 > DELOAD WEEK
@@ -11,8 +19,8 @@ Type: Pull
 Warmup: 1,25km row
 
 * One hand dumbell row: 34km per side
-* Lateral Pull: 3x8
-* Cable Row:
+* Lateral Pull: 3x8 @ 75.3kg
+* Cable Row: 55.3kg
 * Push ups: 3x10
 * Hammer curls: 3x10 @ 10kg
 
