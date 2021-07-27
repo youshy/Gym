@@ -2,6 +2,25 @@
 
 > Newest logs on top.
 
+## 27.07.2021
+
+> DELOAD WEEK, LAST WEEK OF THIS PROGRAM
+
+Type: Push
+
+Warmup: 1,25km row
+
+* Dumbbell Press: 24kg
+* Military Press: 42,5kg
+* Pecs Fly: 73kg
+* Air Squats: 30
+* One-leg deadlifts: 2x10 @ 12kg
+* Triceps Press/Lateral Raises: 10kg, 3x10/10
+
+---
+
+Type: Pull
+
 ## 26.07.2021
 
 > DELOAD WEEK
