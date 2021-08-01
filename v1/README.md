@@ -4,7 +4,7 @@ Program: Push Pull Legs
 
 Start Date: 03.01.2021
 
-End Date:
+End Date: 01.08.2021
 
 Order: Pull | Push/Legs | Cardio | Pull/Legs | Push | Rest | Rest
 
