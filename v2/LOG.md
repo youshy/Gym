@@ -2,6 +2,20 @@
 
 > Newest logs on top
 
+## 12.02.2021
+
+Type: B
+
+Warmup: 6 min bike
+
+* Romanian Deadlift: 52,5kg
+* Barbell Rows: 62,5kg
+* Incline Dumbbell Press: 20kg
+* Lat Pull-Downs: 66kg
+* Hip Abduction: 52kg
+* Cable Lateral Raises: 7.9kg
+* Biceps Cable Curl: 19.3kg
+
 ## 09.08.2021
 
 Type: A
