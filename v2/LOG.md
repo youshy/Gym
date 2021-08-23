@@ -2,6 +2,23 @@
 
 > Newest logs on top
 
+## 23.08.2021
+
+Type: A
+
+Warmup: 7 min bike
+
+* Bench Press: 67.5kg
+* Seated Cable Rows: 66kg
+* Dips: 3x7
+* Pull-Ups: 3x6 (negatives)
+* KB Squats: 25kg
+* Leg curls: 52kg
+* Dumbbell Cuban Press: 9kg
+* Barbell Bicep Curls: 30kg
+
+> Bicep curls with 30kg is stupid. Go down to 25kg next time.
+
 ## 19.08.2021
 
 Type: B
