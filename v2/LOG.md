@@ -2,6 +2,28 @@
 
 > Newest logs on top
 
+## 30.08.2021
+
+Type: A
+
+Warmup: 7 min bike
+
+* Bench Press: 70kg
+* Seated Cable Rows: 68.3kg
+* Dips: 3x8
+* Pull-Ups: 3x5 (negatives)
+* KB Squats: 24kg
+* Leg curls: 55.4kg
+* Dumbbell Cuban Press: 9kg
+* Barbell Bicep Curls: 25kg
+
+> Went back to 25kg on curls, 
+> bench press was waaaay too heavy today, 
+> pull ups were shit, 
+> dips were great, 
+> cuban press can go 1kg up after deload.
+> I need a deload.
+
 ## 26.08.2021
 
 Type: B
