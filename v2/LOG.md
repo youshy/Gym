@@ -2,6 +2,23 @@
 
 > Newest logs on top
 
+## 13.09.2021
+
+Type: A
+
+Warmup: 7 min bike
+
+* Bench Press: 65kg
+* Seated Cable Rows: 56.6kg
+* Dips: 3x6
+* Pull-Ups: 3x5 (negatives)
+* KB Squats: 20kg
+* Leg curls: 45kg
+* Dumbbell Cuban Press: 9kg
+* Barbell Bicep Curls: 25kg
+
+> Back from deload!
+
 ## 02.09.2021
 
 Type: B
