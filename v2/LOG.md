@@ -10,7 +10,7 @@ Warmup: 7 min bike
 
 * Bench Press: 65kg
 * Seated Cable Rows: 56.6kg
-* Dips: 3x6
+* Dips: 3x8
 * Pull-Ups: 3x5 (negatives)
 * KB Squats: 20kg
 * Leg curls: 45kg
