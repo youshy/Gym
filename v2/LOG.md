@@ -2,6 +2,35 @@
 
 > Newest logs on top
 
+## 23.09.2021
+
+Type: B
+
+Warmup: 7 min bike
+
+* Romanian Deadlift: 55kg 3x8
+* Barbell Rows: 65kg 3x12
+* Incline Dumbbell Press: 22kg 3x12
+* Lat Pull-Downs: 68.3kg 3x12
+* Hip Abduction: 54.2kg 3x12
+* Cable Lateral Raises: 10.2kg 3x12
+* Biceps Cable Curl: 21.6kg 3x12
+
+## 21.09.2021
+
+Type: A
+
+Warmup: 7 min bike
+
+* Bench Press: 65kg 3x8
+* Seated Cable Rows: 56.6kg 3x12
+* Dips: 3x8
+* Pull-Ups: 5/5/4 (negatives)
+* KB Squats: 20kg 3x12
+* Leg curls: 45kg 3x12
+* Dumbbell Cuban Press: 9kg 3x12
+* Barbell Bicep Curls: 25kg 3x12
+
 ## 17.09.2021
 
 Type: B
