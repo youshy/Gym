@@ -16,6 +16,7 @@ Order: A | rest | rest | B | rest | rest | rest
 * Seated Cable Rows: 3x10
 * Dips: 3x10/3x failure (whatever higher)
 * Pull-Ups: 3x6/3x failure (whatever higher)
+* Chest Fly on Machine: 3x10
 * KB Squats: 3x10
 * Leg Curls: 3x10
 * Dumbbell Cuban Press 3x10
@@ -27,6 +28,7 @@ Order: A | rest | rest | B | rest | rest | rest
 * Barbell Rows: 3x10
 * Incline Dumbbell Press: 3x10
 * Lat Pull-Downs: 3x10
+* Cable Chest Fly: 3x10
 * Hip Abduction: 3x10
 * Cable Lateral Raises: 3x10
 * Biceps Cable Curl: 3x10
