@@ -8,20 +8,56 @@
 
 ## The Week
 
-| Day | Main work | Finisher |
-|-----|-----------|----------|
-| **Mon** | **Squat** — heavy (5/3/1) + RDLs / lunges | 3km easy (flat) |
-| **Tue** | **Bench** — heavy (5/3/1) + Overhead Press 5×8–10 + dips / DB rows | 4–5km easy |
-| **Wed** | — rest from lifting — | **8–12km easy** |
-| **Thu** | **Deadlift** — heavy (5/3/1) + pullups + barbell rows | 3km easy (flat) |
-| **Fri** | **Squat** — volume 5×5 (or front squat 5×3) + split squats / leg raises | 4–5km easy |
-| **Sat** | **Bench** — volume 5×5 (or incline/close-grip) + Overhead Press 5×8–10 + pullups + rear delts | 4–5km easy |
-| **Sun** | — rest from lifting — | **10–15km long slow** |
+| Day | Main work | Core (2-min finisher) | Run |
+|-----|-----------|-----------------------|-----|
+| **Mon** | **Squat** — heavy (5/3/1) + RDLs / lunges | Ab-wheel rollout / plank | 3km easy (flat) |
+| **Tue** | **Bench** — heavy (5/3/1) + Overhead Press 5×8–10 + dips / DB rows | Pallof press | 4–5km easy |
+| **Wed** | — rest from lifting — | — | **8–12km easy** |
+| **Thu** | **Deadlift** — heavy (5/3/1) + pullups + barbell rows | Suitcase carry | 3km easy (flat) |
+| **Fri** | **Squat** — volume 5×5 (or front squat 5×3) + split squats | Hanging leg raises | 4–5km easy |
+| **Sat** | **Bench** — volume 5×5 (or incline/close-grip) + Overhead Press 5×8–10 + pullups + rear delts | Side plank | 4–5km easy |
+| **Sun** | — rest from lifting — | — | **10–15km long slow** |
 
 **Rules:**
 - Heavy leg days (Mon, Thu) get the **shortest, flattest 3km** — these are the first runs to cut if recovery slips.
 - Military press never gets a heavy day — it lives as a lighter secondary (Tue + Sat) for shoulder-strength frequency.
 - All runs easy/conversational Z2 unless you're peaking a specific race (you're not — general endurance).
+
+---
+
+## Warm-up / Mobility
+
+Non-optional. ~5 min before any lift — this is the injury insurance the plan was missing.
+
+**Before every lift:**
+1. **Raise temp (2–3 min)** — easy row / bike / jumping jacks.
+2. **Day-specific drills (~2 min):**
+   - Leg days (Mon/Fri): leg swings, bodyweight squats, ankle rocks, hip openers
+   - Press days (Tue/Sat): band pull-aparts, shoulder pass-throughs, arm circles
+   - Deadlift (Thu): cat-cow, hip hinges, glute bridges
+3. **Specific ramp** — 2–3 progressively heavier sets of the main lift up to your first working %.
+
+**Before running:** easy runs need nothing. Long-run days (Wed/Sun): 60 sec leg swings + ankle circles first.
+
+Face pulls (3–4×/week, see Accessories) stay as shoulder prehab.
+
+---
+
+## Core
+
+One rotating 2-min finisher per lift day, before the run. Covers all four trunk functions across the week — that's what makes it "round" instead of just crunches.
+
+| Day | Movement | Prescription | Function |
+|-----|----------|--------------|----------|
+| Mon | Ab-wheel rollout **or** plank | 3 sets (rollouts to failure / plank 30–60s) | Anti-extension |
+| Tue | Pallof press | 3×10/side | Anti-rotation |
+| Thu | Suitcase carry | 3×20m/side | Anti-lateral flexion + grip |
+| Fri | Hanging leg raises | 3×10–15 | Flexion |
+| Sat | Side plank | 3×30–45s/side | Anti-lateral flexion |
+
+- **Runner payoff:** Pallof + carries build trunk stiffness so less energy leaks per stride.
+- **Grip note:** if grip is your deadlift limiter, swap — carry to Tue, Pallof to Thu.
+- **Deload week:** 1 set each, or skip.
 
 ---
 
@@ -79,7 +115,7 @@ Target goals: **pullups** and **shoulders**. Compound-first. **3×8–12** unles
 | Mon | RDLs, walking lunges |
 | Tue | Dips, DB rows |
 | Thu | Barbell rows, chins |
-| Fri | Bulgarian split squats, hanging leg raises |
+| Fri | Bulgarian split squats |
 | Sat | Dips, rear-delt flies |
 
 ---
