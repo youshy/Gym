@@ -18,6 +18,8 @@
 | **Sat** | **Bench** — volume 5×5 (or incline/close-grip) + Overhead Press 5×8–10 + pullups + rear delts | Side plank | 4–5km easy |
 | **Sun** | — rest from lifting — | — | **10–15km long slow** |
 
+**Every lift day runs in this order:** warm-up (~5 min) → main work + the one rotating compound shown → laterals + face pulls → core finisher → run. Pushups live in the Tue/Sat warm-up as a primer.
+
 **Rules:**
 - Heavy leg days (Mon, Thu) get the **shortest, flattest 3km** — these are the first runs to cut if recovery slips.
 - Military press never gets a heavy day — it lives as a lighter secondary (Tue + Sat) for shoulder-strength frequency.
@@ -33,7 +35,7 @@ Non-optional. ~5 min before any lift — this is the injury insurance the plan w
 1. **Raise temp (2–3 min)** — easy row / bike / jumping jacks.
 2. **Day-specific drills (~2 min):**
    - Leg days (Mon/Fri): leg swings, bodyweight squats, ankle rocks, hip openers
-   - Press days (Tue/Sat): band pull-aparts, shoulder pass-throughs, arm circles
+   - Press days (Tue/Sat): band pull-aparts, shoulder pass-throughs, arm circles, **1×10–15 pushups (primer)**
    - Deadlift (Thu): cat-cow, hip hinges, glute bridges
 3. **Specific ramp** — 2–3 progressively heavier sets of the main lift up to your first working %.
 
@@ -99,17 +101,15 @@ Not 5/3/1. Straight sets for muscle + technique:
 
 Target goals: **pullups** and **shoulders**. Compound-first. **3×8–12** unless noted.
 
-### Pullups (Thu primary, Sat secondary)
-- Can't hit 8+ clean reps yet → **weekly rep target** (start ~25 total), any number of sets, add reps each week.
-- Once 3×8 bodyweight is easy → start adding weight.
-- Chin-ups count.
+**No — you don't do all of these every session.** Each lift day you do exactly three things after your main work, in this order:
 
-### Shoulders
-- Overhead press (see above).
-- **Lateral raises** 3×12–15.
-- **Face pulls** — 3–4×/week, 3×15. Free shoulder-health insurance.
+1. **The ONE rotating compound for that day** (pick one from the options below — not all).
+2. **Laterals + face pulls** — every lift day. These are the shoulder-target volume; they're light, do them daily.
+3. **Pullups** — only on Thu (primary) and Sat (secondary).
 
-### Rotating compounds
+Then core finisher → run.
+
+### Rotating compounds — pick ONE per day
 | Day | Options |
 |-----|---------|
 | Mon | RDLs, walking lunges |
@@ -117,6 +117,18 @@ Target goals: **pullups** and **shoulders**. Compound-first. **3×8–12** unles
 | Thu | Barbell rows, chins |
 | Fri | Bulgarian split squats |
 | Sat | Dips, rear-delt flies |
+
+### Every lift day (the "daily" shoulder work)
+- **Lateral raises** 3×12–15
+- **Face pulls** 3×15 — free shoulder-health insurance
+
+### Pullups (Thu + Sat only)
+- Can't hit 8+ clean reps yet → **weekly rep target** (start ~25 total), any number of sets, add reps each week.
+- Once 3×8 bodyweight is easy → start adding weight.
+- Chin-ups count.
+
+### Overhead press
+Not an accessory — it's programmed main work on Tue + Sat (5×8–10). See Progression Engine.
 
 ---
 
