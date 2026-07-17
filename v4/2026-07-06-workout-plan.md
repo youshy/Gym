@@ -91,6 +91,17 @@ Not 5/3/1. Straight sets for muscle + technique:
 - Fri variation: front squats 5×3.
 - Sat variation: incline or close-grip bench.
 
+**How to calculate the weight** (TM = 90% of true 1RM):
+1. TM = 0.9 × 1RM
+2. Volume weight = 0.65–0.70 × TM  (≈ 59–63% of true 1RM)
+3. Round down to the nearest plate; hold it all week.
+
+*Example — squat 1RM 140kg:* TM = 126 → volume = 82–88kg → load **82.5kg**.
+
+- **Start at 65% of TM.** If all 25 reps move clean and fast, go to 70% next cycle. Target effort ~7/10 — never a grind.
+- **Variations** (front squat 5×3, incline/close-grip): drop ~10% off the calc — weaker positions.
+- TM climbs with the heavy-day progression, so these weights rise automatically each cycle.
+
 ### Overhead Press (Tue + Sat secondary)
 
 - **5×8–10** at a weight you fully own. Strength here comes from volume + frequency, not maxing.
