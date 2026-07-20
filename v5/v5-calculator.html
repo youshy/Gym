@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v5 Lift Calculator — 5's PRO</title>
+<style>
+  :root { --bg:#12141a; --card:#1c1f28; --line:#2c313e; --txt:#e7eaf0; --dim:#8b93a7;
+          --accent:#5ac8fa; --hot:#ff7a59; --ok:#5ad19a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+         font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; padding:16px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  h2 { font-size:16px; margin:0 0 8px; }
+  .sub { color:var(--dim); font-size:13px; margin:0 0 16px; }
+  .globals { display:flex; gap:16px; flex-wrap:wrap; background:var(--card); border:1px solid var(--line);
+             border-radius:10px; padding:12px 14px; margin-bottom:16px; align-items:center; }
+  .globals label { color:var(--dim); font-size:13px; margin-right:6px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:14px; }
+  .row { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:flex-end; margin-bottom:10px; }
+  .fld { display:flex; flex-direction:column; gap:3px; }
+  .fld span { color:var(--dim); font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+  input, select { background:var(--bg); color:var(--txt); border:1px solid var(--line);
+                  border-radius:7px; padding:7px 8px; font-size:15px; width:74px; }
+  input.wide { width:92px; }
+  button { background:var(--line); color:var(--txt); border:0; border-radius:7px;
+           padding:7px 11px; font-size:14px; cursor:pointer; }
+  button:hover { background:#39404f; }
+  button.derive { background:var(--accent); color:#04202b; font-weight:600; }
+  button.step { background:#2a3340; color:var(--accent); font-weight:700; min-width:38px; }
+  .tmline { display:flex; align-items:center; gap:8px; margin:4px 0 12px; flex-wrap:wrap; }
+  .tmbig { font-size:22px; font-weight:700; color:var(--accent); }
+  .est { color:var(--dim); font-size:13px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { padding:7px 8px; text-align:center; border-bottom:1px solid var(--line); }
+  th { color:var(--dim); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  td.wk { text-align:left; color:var(--dim); }
+  td.top { font-weight:700; color:var(--txt); }
+  tr.deload td { color:var(--dim); }
+  .note { color:var(--dim); font-size:13px; margin-top:10px; }
+  .warn { color:var(--hot); }
+  .pill { display:inline-block; background:#2a3340; color:var(--accent); border-radius:6px;
+          padding:2px 8px; font-size:13px; font-weight:600; }
+  footer { color:var(--dim); font-size:12px; margin-top:8px; text-align:center; }
+</style>
+</head>
+<body>
+<h1>v5 Lift Calculator — 5's PRO</h1>
+<p class="sub">Enter a real set (weight × reps, + reps in reserve) → Derive TM. Every working weight rounds <b>down</b> to a loadable plate. Values save in this browser.</p>
+
+<div class="globals">
+  <div><label>TM = </label>
+    <select id="factor">
+      <option value="0.90">90% of est. 1RM (default)</option>
+      <option value="0.85">85% (start safer)</option>
+    </select>
+  </div>
+  <div><label>Round to</label>
+    <select id="inc">
+      <option value="2.5">2.5 kg</option>
+      <option value="1.25">1.25 kg</option>
+    </select>
+  </div>
+  <button id="reset">Reset to starting values</button>
+</div>
+
+<div id="lifts"></div>
+
+<div class="card">
+  <h2>Overhead Press <span class="pill">owned weight — no %</span></h2>
+  <div class="tmline">
+    <span class="est">Current working weight, 5×10:</span>
+    <input id="ohp" type="number" step="1.25"> kg
+    <button class="step" data-ohp="2.5">+2.5</button>
+  </div>
+  <p class="note">Rule: when all 50 reps move fast and the last set isn't grindy → +2.5kg. That's the whole progression.</p>
+</div>
+
+<div class="card">
+  <h2>Cleans (Fri) <span class="pill">bar speed, not %</span></h2>
+  <div class="tmline">
+    <span class="est">Best clean:</span>
+    <input id="clean" type="number" step="2.5"> kg
+    <span id="cleanRange" class="est"></span>
+  </div>
+  <p class="note">Hang/power clean, 5–6 × 2–3. Build into the range below. <b>The moment the bar slows, stop</b> — even if that's the bottom of the range.</p>
+</div>
+
+<div class="card">
+  <h2>Snatch (Mon) <span class="pill">skill — no target</span></h2>
+  <p class="note">~40–50kg technical work: muscle snatch → snatch balance → hang → full. Heavier only when every rep's positions are crisp. No number to chase.</p>
+</div>
+
+<footer>v5 · 5's PRO · TM = est.1RM (Epley) × factor, rounded down · one source of truth for your loads</footer>
+
+<script>
+"use strict";
+
+// ---- math ----
+const round = (x, inc) => Math.floor(x / inc + 1e-9) * inc;
+const est1RM = (w, reps, rir) => w * (1 + (Number(reps) + Number(rir)) / 30);
+const tmFrom = (w, reps, rir, factor, inc) => round(est1RM(w, reps, rir) * factor, inc);
+const fmt = n => Number.isInteger(n) ? String(n) : n.toFixed(n * 10 % 10 ? 2 : 1);
+
+// 5's PRO percentages
+const CYCLE = [
+  { wk: "Wk 1",   pct: [65, 75, 85] },
+  { wk: "Wk 2",   pct: [70, 80, 90] },
+  { wk: "Wk 3",   pct: [75, 85, 95] },
+  { wk: "Deload", pct: [40, 50, 60], deload: true },
+];
+
+// ---- lifts: TM-driven ----
+const LIFTS = [
+  { key:"squat",    name:"Squat (Mon heavy)",     step:5,   volPct:65, volLabel:"Fri light squat (speed), 5×3 fast" },
+  { key:"bench",    name:"Bench (Tue heavy)",     step:2.5, volPct:65, volLabel:"Sat bench volume, 5×5" },
+  { key:"deadlift", name:"Deadlift (Thu)",        step:5,   warn:"Capped low for the back — position first, load second. Belt on, brace, stop if the back talks. Raise TM only after a symptom-free cycle." },
+];
+
+// ---- default starting state (derived 2026-07-20) ----
+const DEFAULTS = {
+  factor: "0.90", inc: "2.5",
+  squat:    { w:90,  reps:8, rir:3, tm:110 },
+  bench:    { w:80,  reps:4, rir:0, tm:80  },
+  deadlift: { w:100, reps:8, rir:0, tm:105 },
+  ohp: 30,
+  clean: 70,
+};
+const KEY = "v5calc";
+let state = load();
+
+function load() {
+  try { return Object.assign(structuredClone(DEFAULTS), JSON.parse(localStorage.getItem(KEY) || "{}")); }
+  catch { return structuredClone(DEFAULTS); }
+}
+function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
+
+// ---- render ----
+const $ = s => document.querySelector(s);
+const factorSel = $("#factor"), incSel = $("#inc");
+
+function matrixHTML(tm, inc) {
+  let rows = CYCLE.map(row => {
+    const cells = row.pct.map((p, i) => {
+      const w = fmt(round(tm * p / 100, inc));
+      const cls = i === 2 ? ' class="top"' : '';
+      return `<td${cls}>${w} <span class="est">(${p}%)</span></td>`;
+    }).join("");
+    return `<tr class="${row.deload ? 'deload' : ''}"><td class="wk">${row.wk}</td>${cells}</tr>`;
+  }).join("");
+  return `<table><thead><tr><th></th><th>Set 1 ×5</th><th>Set 2 ×5</th><th>Top ×5</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function liftCardHTML(cfg) {
+  const s = state[cfg.key], inc = Number(state.inc);
+  const est = est1RM(s.w, s.reps, s.rir);
+  const vol = fmt(round(s.tm * cfg.volPct / 100, inc));
+  return `
+  <div class="card" data-lift="${cfg.key}">
+    <h2>${cfg.name}</h2>
+    <div class="row">
+      <label class="fld"><span>weight</span><input type="number" step="2.5" data-f="w" value="${s.w}"></label>
+      <label class="fld"><span>reps</span><input type="number" step="1" data-f="reps" value="${s.reps}"></label>
+      <label class="fld"><span>reps in reserve</span><input type="number" step="1" data-f="rir" value="${s.rir}"></label>
+      <button class="derive" data-derive>Derive TM →</button>
+    </div>
+    <div class="tmline">
+      <span class="est">est. 1RM ≈ ${fmt(Math.round(est * 10) / 10)}</span>
+      <span>·</span>
+      <label class="fld" style="flex-direction:row;align-items:center;gap:6px;">
+        <span>TM</span><input class="wide tmbig" type="number" step="${cfg.step}" data-f="tm" value="${s.tm}" style="width:96px;">
+      </label>
+      <button class="step" data-tmstep="${-cfg.step}">−${cfg.step}</button>
+      <button class="step" data-tmstep="${cfg.step}">+${cfg.step}</button>
+      <span class="est">cycle bump: ${cfg.step}kg</span>
+    </div>
+    ${matrixHTML(s.tm, inc)}
+    ${cfg.volLabel ? `<p class="note">${cfg.volLabel}: <b>${vol} kg</b> (${cfg.volPct}% TM).</p>` : ""}
+    ${cfg.warn ? `<p class="note warn">⚠️ ${cfg.warn}</p>` : ""}
+  </div>`;
+}
+
+function renderCleanRange() {
+  const inc = Number(state.inc), best = Number(state.clean) || 0;
+  const lo = fmt(round(best * 0.70, inc)), hi = fmt(round(best * 0.85, inc));
+  $("#cleanRange").textContent = best ? `→ work ${lo}–${hi} kg (70–85%)` : "";
+}
+
+function renderAll() {
+  factorSel.value = state.factor;
+  incSel.value = state.inc;
+  $("#lifts").innerHTML = LIFTS.map(liftCardHTML).join("");
+  $("#ohp").value = state.ohp;
+  $("#clean").value = state.clean;
+  renderCleanRange();
+  wireLifts();
+  save();
+}
+
+// ---- events ----
+function wireLifts() {
+  document.querySelectorAll("[data-lift]").forEach(card => {
+    const key = card.dataset.lift;
+    card.querySelectorAll("input[data-f]").forEach(inp => {
+      inp.addEventListener("change", () => {
+        state[key][inp.dataset.f] = Number(inp.value);
+        renderAll();
+      });
+    });
+    const cfg = LIFTS.find(l => l.key === key);
+    card.querySelector("[data-derive]").addEventListener("click", () => {
+      const s = state[key];
+      s.tm = tmFrom(s.w, s.reps, s.rir, Number(state.factor), Number(state.inc));
+      renderAll();
+    });
+    card.querySelectorAll("[data-tmstep]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        state[key].tm = Math.max(0, state[key].tm + Number(btn.dataset.tmstep));
+        renderAll();
+      });
+    });
+  });
+}
+
+factorSel.addEventListener("change", () => { state.factor = factorSel.value; renderAll(); });
+incSel.addEventListener("change",   () => { state.inc = incSel.value; renderAll(); });
+$("#ohp").addEventListener("change", e => { state.ohp = Number(e.target.value); save(); });
+$("#clean").addEventListener("change", e => { state.clean = Number(e.target.value); renderCleanRange(); save(); });
+document.querySelector("[data-ohp]").addEventListener("click", () => {
+  state.ohp = (Number(state.ohp) || 0) + 2.5; $("#ohp").value = state.ohp; save();
+});
+$("#reset").addEventListener("click", () => {
+  if (confirm("Reset all values to the 2026-07-20 starting numbers?")) {
+    state = structuredClone(DEFAULTS); renderAll();
+  }
+});
+
+renderAll();
+
+// ---- self-check (ponytail: the math is the only non-trivial logic) ----
+(function selfCheck() {
+  const A = (cond, msg) => { if (!cond) console.error("SELF-CHECK FAIL:", msg); };
+  A(round(93.5, 2.5) === 92.5, "round down 93.5 → 92.5");
+  A(round(110.7, 2.5) === 110, "round down 110.7 → 110");
+  A(Math.abs(est1RM(90, 8, 3) - 123) < 1e-9, "est1RM 90×8 +3RIR = 123");
+  A(tmFrom(90, 8, 3, 0.90, 2.5) === 110, "squat TM derives to 110");
+  A(tmFrom(80, 4, 0, 0.90, 2.5) === 80, "bench TM derives to 80");
+  A(round(110 * 0.95, 2.5) === 102.5, "squat wk3 top = 102.5");
+  console.log("v5calc self-check done (any FAIL above = bug)");
+})();
+</script>
+</body>
+</html>
