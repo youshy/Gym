@@ -1,7 +1,7 @@
 # Workout Plan v6 — Pullup + Pec/Tri Specialization (design spec)
 
 **Status:** design approved 2026-07-26, pending spec review before implementation.
-**Relationship to v5:** v6 is **not a rewrite.** It is a *specialization layer* bolted onto the v5 athletic-power base. v5's structure — snatch/cleans/plyo over a 5/3/1 (5's PRO) base + easy Z2 running — stays fully intact. v6 adds a second daily session and modest chest/tri emphasis to the two existing press days.
+**Relationship to v5:** v6 is a **full standalone rewrite that supersedes v5.** v5 was written but never run (still on v4 week 3/4 as of 2026-07-26), so v6 replaces it as the complete plan rather than layering on top. It **keeps v5's athletic-power base entirely** — snatch/cleans/plyo over a 5/3/1 (5's PRO) base + easy Z2 running — and folds in the pullup + pec/tri specialization as first-class parts of one self-contained document. The v6 plan doc must read complete on its own; a reader should never need v5 open beside it.
 
 ---
 
@@ -59,7 +59,7 @@ arm swings + band pull-aparts → 2× scap pulls / dead hang → one light ramp 
 | Thu | **light** | full | spare grip/lats for the deadlift |
 | Fri | full | full | upper fresh (cleans/legs midday) |
 | Sat | full | **light** | benched (volume) midday |
-| Sun | light mobility/scap only, or off | | biggest run day = built-in light day |
+| Sun | **optional** light mobility/scap, or off | | biggest run day = built-in light day, always optional |
 
 ---
 
@@ -108,7 +108,7 @@ Vertical pulling leaves midday (owned by the evening block); horizontal pulling 
 | **Thu** | (opt high-pulls) → Deadlift 5's PRO → barbell rows → lat/face pulls → suitcase carry | Pull light + Push full | 3km flat |
 | **Fri** | Cleans + jumps → speed squat → lat/face pulls | Pull full + Push full | 4–5km |
 | **Sat** | Plyo pushups → Bench volume 5×5 → OHP → incline/dips + pushdown → lat/face pulls → side plank | Pull full + Push light | 4–5km |
-| **Sun** | — rest from lifting — | Light mobility/scap or off | 10–15km |
+| **Sun** | — rest from lifting — | Optional (light mobility/scap or off) | 10–15km |
 
 ---
 
@@ -143,14 +143,14 @@ Same antagonist superset structure, same submaximal reps-in-reserve rule, same p
 
 ## Implementation deliverables (for the plan phase)
 
-1. `v6/2026-07-26-workout-plan.md` — the full v6 plan doc, in the v5 house style.
+1. `v6/2026-07-26-workout-plan.md` — the full **standalone** v6 plan doc, in the v5 house style, complete on its own (supersedes v5; does not reference it).
 2. `v6/2026-07-26-hotel-backup.md` — the no-equipment backup, expanded.
-3. Calculator: reuse `v5/v5-calculator.html` (TMs unchanged) — v6 changes no barbell numbers, so no new calculator is needed; note this explicitly so numbers stay single-source.
+3. Calculator: copy `v5/v5-calculator.html` → `v6/v6-calculator.html` so v6 is self-contained (TMs unchanged — v6 changes no barbell numbers). The plan doc points at the v6 calculator as its single source of truth for weights.
 
 ---
 
 ## Open questions / non-goals
 
-- **Non-goal:** changing any barbell TM or the running structure — untouched from v5.
+- **Non-goal:** changing any barbell TM or the running structure — carried over from v5 unchanged.
 - **Non-goal:** adding chest/tri volume to leg/power days (Mon/Fri) — deliberately excluded.
-- To confirm at review: whether Sunday evening is *light mobility* or *fully off*.
+- **Resolved:** Sunday evening is **always optional** (light mobility/scap or fully off — the user's call each week).
