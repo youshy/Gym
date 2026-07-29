@@ -150,7 +150,7 @@ const fmt = n => Number.isInteger(n) ? String(n) : n.toFixed(n * 10 % 10 ? 2 : 1
 
 // ---- running paces (ponytail: offsets are rules-of-thumb, recalibrated by the monthly 5k TT) ----
 const HM_KM = 21.0975;
-const parseTime = s => { const [m, sec] = String(s).split(":").map(Number); return (m || 0) * 60 + (sec || 0); };
+const parseTime = s => String(s).split(":").map(Number).reduce((a, n) => a * 60 + (n || 0), 0); // handles mm:ss and h:mm:ss
 const paceStr = spk => { const t = Math.round(spk); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; };
 const fmtClock = sec => { sec = Math.round(sec); const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
   return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`; };
@@ -354,6 +354,7 @@ renderAll();
   A(tmFrom(80, 4, 0, 0.90, 2.5) === 80, "bench TM derives to 80");
   A(round(110 * 0.95, 2.5) === 102.5, "squat wk3 top = 102.5");
   A(parseTime("25:00") === 1500, "parseTime 25:00 = 1500");
+  A(parseTime("1:50:00") === 6600, "parseTime 1:50:00 (h:mm:ss) = 6600");
   A(paceStr(313) === "5:13", "paceStr 313 = 5:13");
   A(fmtClock(6900) === "1:55:00", "fmtClock 6900 = 1:55:00");
   A(Math.abs(riegelSeconds(1500, 5, 21.0975) - 6900) < 3, "riegel 25:00 5k → ~1:55:00 HM");
