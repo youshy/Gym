@@ -193,6 +193,33 @@ Rule: **never run threshold underfueled** — quality collapses without availabl
 6. **Maintenance is ~3500–3700, not 4000+** — the scale and the add-up agree; the activity-multiplier intuition over-credits training.
 7. **Cut rate de-escalates and ends at a weight** (~88–90 kg), not a duration.
 
-## 9. Biggest risk
+## 9. Calculator extension (live numbers, like the lift TMs)
+
+Extend the existing `v5/v5-calculator.html` **in place** — same single-file, localStorage, self-checking pattern; two new cards. (Recommended over a fresh `v6/` copy: the lifting engine is unchanged v5, so keep one source of truth and avoid duplicating the lift plan. A clean v6 split is a later rename if wanted.)
+
+**Rule (mirrors the TM design):** store only *inputs*, derive everything on render. The single running input is the **latest 5k time-trial** — the monthly TT keeps every pace honest, exactly as a real set drives the TMs.
+
+### Card A — Running paces
+- **Input:** latest 5k time (mm:ss). Optional: goal HM time.
+- **Derive** (Riegel `T2 = T1 × (D2/D1)^1.06` to predict HM; training zones as offsets off 5k pace — approximation, calibrated by the monthly TT):
+  | Zone | Rule of thumb |
+  |------|---------------|
+  | Easy / long | 5k pace + ~75–90 s/km |
+  | Threshold | 5k pace + ~20–25 s/km |
+  | Interval (VO2) | ≈ 5k pace |
+  | HM goal / race | predicted (or user's goal) HM pace |
+- Show predicted HM finish time alongside the goal, so the gap is visible.
+
+### Card B — Nutrition targets
+- **Input:** current bodyweight (kg); phase selector (Base / Build / Peak).
+- **Derive:** protein ~2 g/kg (constant), fat ~0.8 g/kg floor (constant), and the three carb day-types (hard ~4.5–5 / moderate ~3 / easy ~2 g/kg) with resulting total kcal per day-type. Phase selector sets the calorie/loss-rate reminder (Base ~3400 / Build ~3400 / Peak maintenance).
+- Static note block: the threshold-day fuelling timeline + caffeine dose (3–6 mg/kg) + long-run 30–60 g carb/hr.
+
+### Constraints
+- Vanilla JS, single file, no dependencies (match existing).
+- Extend the existing `selfCheck()` with assertions for the new math (Riegel prediction, a known pace offset, a carb-gram calc).
+- All new derived values recompute on render; nothing derived is persisted.
+
+## 10. Biggest risk
 
 Cutting while doing two-a-days + new threshold work. Mitigations: the calorie bump (3000→3400), the de-escalating loss rate, carb-cycling, and the rule to **raise calories first** at the first sign of sliding strength or paces.
