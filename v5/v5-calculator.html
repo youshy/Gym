@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>v5 Lift Calculator — 5's PRO</title>
+<title>v5 Training Calculator — Lifts · Running · Fuel</title>
 <style>
   :root { --bg:#12141a; --card:#1c1f28; --line:#2c313e; --txt:#e7eaf0; --dim:#8b93a7;
           --accent:#5ac8fa; --hot:#ff7a59; --ok:#5ad19a; }
@@ -45,7 +45,7 @@
 </style>
 </head>
 <body>
-<h1>v5 Lift Calculator — 5's PRO</h1>
+<h1>v5 Training Calculator — Lifts · Running · Fuel</h1>
 <p class="sub">Enter a real set (weight × reps, + reps in reserve) → Derive TM. Every working weight rounds <b>down</b> to a loadable plate. Values save in this browser.</p>
 
 <div class="globals">
@@ -91,6 +91,52 @@
   <p class="note">~40–50kg technical work: muscle snatch → snatch balance → hang → full. Heavier only when every rep's positions are crisp. No number to chase.</p>
 </div>
 
+<div class="card">
+  <h2>Running Paces <span class="pill">from your 5k TT</span></h2>
+  <div class="tmline">
+    <span class="est">Latest 5k time-trial:</span>
+    <input id="fiveK" type="text" style="width:80px;" placeholder="mm:ss">
+    <span class="est">· Goal HM:</span>
+    <input id="goalHM" type="text" style="width:90px;" placeholder="h:mm:ss">
+  </div>
+  <p class="note">Predicted HM off this 5k: <b id="hmPredict">—</b> · your goal pace: <b id="goalPaceOut">—</b></p>
+  <table>
+    <thead><tr><th>Zone</th><th>Pace /km</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="wk">Easy / long</td><td class="top" id="pEasy">—</td><td class="est">conversational</td></tr>
+      <tr><td class="wk">Threshold</td><td class="top" id="pThr">—</td><td class="est">20–40 min in reps</td></tr>
+      <tr><td class="wk">Interval (VO2)</td><td class="top" id="pInt">—</td><td class="est">3–5 min reps</td></tr>
+      <tr><td class="wk">HM race pace</td><td class="top" id="pHM">—</td><td class="est">goal, else predicted</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Update the 5k time after each monthly time-trial — every pace re-derives from it.</p>
+</div>
+
+<div class="card">
+  <h2>Nutrition Targets <span class="pill">carb-cycle: fuel the work</span></h2>
+  <div class="tmline">
+    <span class="est">Bodyweight:</span>
+    <input id="bw" type="number" step="0.5" style="width:74px;"> kg
+    <span class="est">· Phase:</span>
+    <select id="phase" style="width:auto;">
+      <option value="base">Base</option>
+      <option value="build">Build</option>
+      <option value="peak">Peak</option>
+    </select>
+  </div>
+  <p class="note"><b id="phaseIntake">—</b> · target loss rate <b id="phaseRate">—</b> · the scale is the arbiter: adjust ±150 kcal to hold the rate.</p>
+  <p class="note">Constants every day: protein <b id="mPro">—</b> · fat floor <b id="mFat">—</b>. Carbs flex:</p>
+  <table>
+    <thead><tr><th>Day</th><th>Carbs</th><th>~kcal</th></tr></thead>
+    <tbody>
+      <tr><td class="wk">Hard (threshold / long / heavy legs)</td><td class="top" id="cHard">—</td><td id="kHard" class="est">—</td></tr>
+      <tr><td class="wk">Moderate (other lift+run)</td><td class="top" id="cMod">—</td><td id="kMod" class="est">—</td></tr>
+      <tr><td class="wk">Easy / low (deload, pure easy)</td><td class="top" id="cEasy">—</td><td id="kEasy" class="est">—</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Threshold day: caffeine 3–6 mg/kg ~45 min pre · pre-run 60–80 g carbs + 25–30 g protein · post 30–40 g whey + 60–80 g carbs. Long runs &gt;75 min: 30–60 g carbs/hr.</p>
+</div>
+
 <footer>v5 · 5's PRO · TM = est.1RM (Epley) × factor, rounded down · one source of truth for your loads</footer>
 
 <script>
@@ -101,6 +147,32 @@ const round = (x, inc) => Math.floor(x / inc + 1e-9) * inc;
 const est1RM = (w, reps, rir) => w * (1 + (Number(reps) + Number(rir)) / 30);
 const tmFrom = (w, reps, rir, factor, inc) => round(est1RM(w, reps, rir) * factor, inc);
 const fmt = n => Number.isInteger(n) ? String(n) : n.toFixed(n * 10 % 10 ? 2 : 1);
+
+// ---- running paces (ponytail: offsets are rules-of-thumb, recalibrated by the monthly 5k TT) ----
+const HM_KM = 21.0975;
+const parseTime = s => { const [m, sec] = String(s).split(":").map(Number); return (m || 0) * 60 + (sec || 0); };
+const paceStr = spk => { const t = Math.round(spk); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; };
+const fmtClock = sec => { sec = Math.round(sec); const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+  return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`; };
+const riegelSeconds = (t1, d1, d2) => t1 * Math.pow(d2 / d1, 1.06);
+const paces = fiveKsec => {
+  const p = fiveKsec / 5; // 5k pace, sec/km
+  return { easy: p + 85, threshold: p + 22, interval: p + 5,
+           hm: riegelSeconds(fiveKsec, 5, HM_KM) / HM_KM, hmFinish: riegelSeconds(fiveKsec, 5, HM_KM) };
+};
+
+// ---- nutrition (ponytail: bodyweight-scaled targets; weekly balance is the athlete's job) ----
+const macros = bw => {
+  const protein = 2.0 * bw, fat = 0.8 * bw;
+  const carb = { hard: 4.75 * bw, moderate: 3.0 * bw, easy: 2.0 * bw };
+  const kcal = c => Math.round(protein * 4 + fat * 9 + c * 4);
+  return { protein, fat, carb, kcal: { hard: kcal(carb.hard), moderate: kcal(carb.moderate), easy: kcal(carb.easy) } };
+};
+const PHASE = {
+  base:  { label: "Base",  intake: "~3400 kcal",         rate: "0.3–0.4 kg/wk" },
+  build: { label: "Build", intake: "~3400 (nudge up)",   rate: "0.2–0.3 kg/wk" },
+  peak:  { label: "Peak",  intake: "maintenance ~3700",  rate: "0 — fuel the build" },
+};
 
 // 5's PRO percentages
 const CYCLE = [
@@ -125,6 +197,8 @@ const DEFAULTS = {
   deadlift: { w:100, reps:8, rir:0, tm:105 },
   ohp: 30,
   clean: 70,
+  fiveK: "27:00", goalHM: "1:50:00",
+  bw: 97, phase: "base",
 };
 const KEY = "v5calc";
 let state = load();
@@ -186,6 +260,31 @@ function renderCleanRange() {
   $("#cleanRange").textContent = best ? `→ work ${lo}–${hi} kg (70–85%)` : "";
 }
 
+function renderRunning() {
+  const t = parseTime(state.fiveK);
+  const goal = state.goalHM ? parseTime(state.goalHM) : 0;
+  if (!t) { $("#hmPredict").textContent = "—"; return; }
+  const p = paces(t);
+  $("#hmPredict").textContent = `${fmtClock(p.hmFinish)} (${paceStr(p.hm)}/km)`;
+  $("#goalPaceOut").textContent = goal ? `${paceStr(goal / HM_KM)}/km` : "—";
+  $("#pEasy").textContent = paceStr(p.easy);
+  $("#pThr").textContent  = paceStr(p.threshold);
+  $("#pInt").textContent  = paceStr(p.interval);
+  $("#pHM").textContent   = paceStr(goal ? goal / HM_KM : p.hm);
+}
+
+function renderNutrition() {
+  const m = macros(Number(state.bw) || 0), ph = PHASE[state.phase] || PHASE.base;
+  const g = x => `${Math.round(x)} g`;
+  $("#phaseIntake").textContent = ph.intake;
+  $("#phaseRate").textContent = ph.rate;
+  $("#mPro").textContent = g(m.protein);
+  $("#mFat").textContent = g(m.fat);
+  $("#cHard").textContent = g(m.carb.hard);     $("#kHard").textContent = `${m.kcal.hard} kcal`;
+  $("#cMod").textContent  = g(m.carb.moderate); $("#kMod").textContent  = `${m.kcal.moderate} kcal`;
+  $("#cEasy").textContent = g(m.carb.easy);     $("#kEasy").textContent = `${m.kcal.easy} kcal`;
+}
+
 function renderAll() {
   factorSel.value = state.factor;
   incSel.value = state.inc;
@@ -193,6 +292,12 @@ function renderAll() {
   $("#ohp").value = state.ohp;
   $("#clean").value = state.clean;
   renderCleanRange();
+  $("#fiveK").value = state.fiveK;
+  $("#goalHM").value = state.goalHM;
+  renderRunning();
+  $("#bw").value = state.bw;
+  $("#phase").value = state.phase;
+  renderNutrition();
   wireLifts();
   save();
 }
@@ -226,6 +331,10 @@ factorSel.addEventListener("change", () => { state.factor = factorSel.value; ren
 incSel.addEventListener("change",   () => { state.inc = incSel.value; renderAll(); });
 $("#ohp").addEventListener("change", e => { state.ohp = Number(e.target.value); save(); });
 $("#clean").addEventListener("change", e => { state.clean = Number(e.target.value); renderCleanRange(); save(); });
+$("#fiveK").addEventListener("change",  e => { state.fiveK = e.target.value; renderRunning(); save(); });
+$("#goalHM").addEventListener("change", e => { state.goalHM = e.target.value; renderRunning(); save(); });
+$("#bw").addEventListener("change",     e => { state.bw = Number(e.target.value); renderNutrition(); save(); });
+$("#phase").addEventListener("change",  e => { state.phase = e.target.value; renderNutrition(); save(); });
 document.querySelector("[data-ohp]").addEventListener("click", () => {
   state.ohp = (Number(state.ohp) || 0) + 2.5; $("#ohp").value = state.ohp; save();
 });
@@ -246,6 +355,16 @@ renderAll();
   A(tmFrom(90, 8, 3, 0.90, 2.5) === 110, "squat TM derives to 110");
   A(tmFrom(80, 4, 0, 0.90, 2.5) === 80, "bench TM derives to 80");
   A(round(110 * 0.95, 2.5) === 102.5, "squat wk3 top = 102.5");
+  A(parseTime("25:00") === 1500, "parseTime 25:00 = 1500");
+  A(paceStr(313) === "5:13", "paceStr 313 = 5:13");
+  A(fmtClock(6900) === "1:55:00", "fmtClock 6900 = 1:55:00");
+  A(Math.abs(riegelSeconds(1500, 5, 21.0975) - 6900) < 3, "riegel 25:00 5k → ~1:55:00 HM");
+  A(paceStr(paces(1500).easy) === "6:25", "easy pace off 25:00 5k = 6:25");
+  A(paceStr(paces(1500).threshold) === "5:22", "threshold pace off 25:00 5k = 5:22");
+  A(macros(97).protein === 194, "macros(97) protein = 194g");
+  A(Math.abs(macros(97).carb.hard - 460.75) < 1e-9, "macros(97) hard carbs = 460.75g");
+  A(macros(97).kcal.moderate === 2638, "macros(97) moderate day = 2638 kcal");
+  A(PHASE.peak.rate.startsWith("0"), "peak phase loss rate is 0");
   console.log("v5calc self-check done (any FAIL above = bug)");
 })();
 </script>
