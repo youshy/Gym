@@ -203,6 +203,8 @@ The 90%-TM buffer means even 95%×5 is only ~85% of true 1RM — hard, honest, n
 
 All easy Z2. No hard running on lift days.
 
+> **Training for the half marathon?** This easy-running layer is the base. When you start the periodized half-marathon season (target Sept 2027), the day-to-day quality sessions, long-run progression, and fuelling live in the companion doc: [`2026-07-29-half-marathon-plan.md`](2026-07-29-half-marathon-plan.md). Live paces re-derive from your 5k TT in [`v6-calculator.html`](v6-calculator.html). Quality runs land on Wed & Sun (the no-lift days); the specialization waves above run during the season's Base phase.
+
 | Day | Distance |
 |-----|----------|
 | Mon / Thu | 3km (heavy legs — flat, truly easy) |
