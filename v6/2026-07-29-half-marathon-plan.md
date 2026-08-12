@@ -132,7 +132,7 @@ Two quality + the long run carries a race-pace finish. Lifting per the spec's ma
 
 ## Fuelling quick-reference
 
-Live grams: the **Nutrition card in `v6-calculator.html`** (bodyweight + phase → macros). Summary:
+Live grams: the **Nutrition card in `v6-calculator.html`** (bodyweight + phase → macros). The full *how* — carb rotation by day type, the 10:00–18:00 eating window, reflux-safe meal templates, and per-run fuelling — is in **[`2026-08-12-nutrition-fuelling.md`](2026-08-12-nutrition-fuelling.md)**. Summary:
 
 - **Constants daily:** protein ~2 g/kg (~195 g) · fat ~0.8 g/kg floor (~78 g). **Carbs flex** by day type.
 - **Carb cycling:** hard days (threshold / long run / heavy legs) ~4.5–5 g/kg (~430–480 g, ≈ maintenance) · moderate (other lift+run) ~3 g/kg · easy/deload ~2 g/kg (deepest deficit). Weekly average lands the loss-rate target; hard days stay protected.
