@@ -16,6 +16,19 @@ Quick-glance companion to [`2026-07-26-workout-plan.md`](2026-07-26-workout-plan
 
 Fixed accessories every lift day: **lateral raises 3×12–15, face pulls 3×15.**
 
+## Warm-up (day-specific — non-optional)
+
+Shape every day: **raise temperature (2–3 minutes easy row / bike / jumping jacks) → day-specific mobility → ramp into the first movement.** Explosive days need a thorough ramp.
+
+| Session | Mobility | Ramp into |
+|---------|----------|-----------|
+| **Monday** (snatch + squat) | ankle rocks, deep-squat holds, wrist prep, band pull-aparts, overhead pass-throughs, hip openers | empty-bar snatch complex → skill weight |
+| **Tuesday / Saturday** (upper plyometrics + bench) | band pull-aparts, arm circles, thoracic openers, cat-cow, 1×10–15 pushups | a few light medicine-ball throws into the plyometrics |
+| **Thursday** (deadlift) | cat-cow, hip hinges, glute bridges, band good-mornings, hamstring floss | progressively heavier ramp sets to first working weight |
+| **Friday** (cleans + jumps) | ankle / hip / thoracic mobility, front-rack stretch, wrist prep, glute activation | jump ramp (pogos → tuck jumps → box jumps) → empty-bar clean complex |
+
+**Evening Grease the Groove (~2 minutes, body already warm):** arm swings + band pull-aparts → 2× scapular pulls / dead hang → one light ramp set of each movement. *Cold-body fallback (~3–4 minutes):* add 10 easy knee / incline pushups + wrist prep first.
+
 ## Heavy days — 5/3/1 percent and rep split per cycle (kilograms from current Training Maxes)
 
 Clean top set, no As-Many-Reps-As-Possible (keeps the central-nervous-system reserve for explosive work).
@@ -38,7 +51,7 @@ Kilogram cells read *set 1 / set 2 / top*. Deadlift top capped near 97.5 (back).
 | Snatch skill | Monday | ~15 minutes, ~40–50 kilograms, no target — bar speed governs |
 | Cleans loaded | Friday | 5–6 × 2–3, build to ~50–60 kilograms, stop when bar slows |
 | Lower-body jumps | Friday | 3–5 × 3–5, land soft, full rest |
-| Upper-body plyometrics | Tuesday + Saturday | 3–5 × 3–5 explosive |
+| Upper-body plyometrics | Tuesday + Saturday | 3–5 × 3–5 explosive — pick one: medicine-ball chest pass / medicine-ball overhead throw / medicine-ball slams / clap (plyometric) pushups |
 | Speed squat | Friday | ~65% Training Max (~70 kilograms) 5×3 fast |
 | Bench Press volume | Saturday | 5×5 @ ~65% Training Max (~52.5 kilograms) |
 | Overhead Press | Tuesday + Saturday | 30 kilograms 5×10, +2.5 when all fast |
