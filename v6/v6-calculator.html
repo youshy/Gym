@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>v6 Training Calculator — Lifts · Running · Fuel</title>
+<title>Training Calculator (v7) — Lifts · Running · Fuel</title>
 <style>
   :root { --bg:#12141a; --card:#1c1f28; --line:#2c313e; --txt:#e7eaf0; --dim:#8b93a7;
           --accent:#5ac8fa; --hot:#ff7a59; --ok:#5ad19a; }
@@ -45,7 +45,7 @@
 </style>
 </head>
 <body>
-<h1>v6 Training Calculator — Lifts · Running · Fuel</h1>
+<h1>Training Calculator — Lifts · Running · Fuel <span class="pill">v7 numbers</span></h1>
 <p class="sub">Enter a real set (weight × reps, + reps in reserve) → Derive TM. Every working weight rounds <b>down</b> to a loadable plate. Values save in this browser.</p>
 
 <div class="globals">
@@ -69,11 +69,12 @@
 <div class="card">
   <h2>Overhead Press <span class="pill">owned weight — no %</span></h2>
   <div class="tmline">
-    <span class="est">Current working weight, 5×10:</span>
+    <span class="est">Week 1 weight, 3×10 (Tue + Thu):</span>
     <input id="ohp" type="number" step="1.25"> kg
     <button class="step" data-ohp="2.5">+2.5</button>
+    <span id="ohpWeeks" class="est"></span>
   </div>
-  <p class="note">Rule: when all 50 reps move fast and the last set isn't grindy → +2.5kg. That's the whole progression.</p>
+  <p class="note">Assumed max ~42.5. Week 3 clean (cleaner / faster than week 2) → +2.5 for the next cycle. One empty-bar ramp set first.</p>
 </div>
 
 <div class="card">
@@ -137,7 +138,7 @@
   <p class="note">Threshold day: caffeine 3–6 mg/kg ~45 min pre · pre-run 60–80 g carbs + 25–30 g protein · post 30–40 g whey + 60–80 g carbs. Long runs &gt;75 min: 30–60 g carbs/hr.</p>
 </div>
 
-<footer>v6 · lifts · running · fuel · TM = est.1RM (Epley) × factor, rounded down · paces re-derive from your 5k · one source of truth</footer>
+<footer>v7 · lifts · running · fuel · TM = est.1RM (Epley) × factor, rounded down · paces re-derive from your 5k · one source of truth</footer>
 
 <script>
 "use strict";
@@ -146,7 +147,7 @@
 const round = (x, inc) => Math.floor(x / inc + 1e-9) * inc;
 const est1RM = (w, reps, rir) => w * (1 + (Number(reps) + Number(rir)) / 30);
 const tmFrom = (w, reps, rir, factor, inc) => round(est1RM(w, reps, rir) * factor, inc);
-const fmt = n => Number.isInteger(n) ? String(n) : n.toFixed(n * 10 % 10 ? 2 : 1);
+const fmt = n => Number.isInteger(n) ? String(n) : n.toFixed(n * 10 % 1 ? 2 : 1);
 
 // ---- running paces (ponytail: offsets are rules-of-thumb, recalibrated by the monthly 5k TT) ----
 const HM_KM = 21.0975;
@@ -173,28 +174,29 @@ const PHASE = {
   peak:  { label: "Peak",  intake: "maintenance ~3700",  rate: "0 — fuel the build" },
 };
 
-// 5's PRO percentages
+// 5/3/1 percentages + rep splits (clean top set, no AMRAP)
 const CYCLE = [
-  { wk: "Wk 1",   pct: [65, 75, 85] },
-  { wk: "Wk 2",   pct: [70, 80, 90] },
-  { wk: "Wk 3",   pct: [75, 85, 95] },
-  { wk: "Deload", pct: [40, 50, 60], deload: true },
+  { wk: "Wk 1",   pct: [65, 75, 85], reps: [5, 5, 5] },
+  { wk: "Wk 2",   pct: [70, 80, 90], reps: [3, 3, 3] },
+  { wk: "Wk 3",   pct: [75, 85, 95], reps: [5, 3, 1] },
+  { wk: "Deload", pct: [40, 50, 60], reps: [5, 5, 5], deload: true },
 ];
 
 // ---- lifts: TM-driven ----
 const LIFTS = [
   { key:"squat",    name:"Squat (Mon heavy)",     step:5,   volPct:65, volLabel:"Fri light squat (speed), 5×3 fast" },
   { key:"bench",    name:"Bench (Tue heavy)",     step:2.5, volPct:65, volLabel:"Sat bench volume, 5×5" },
-  { key:"deadlift", name:"Deadlift (Thu)",        step:5,   warn:"Capped low for the back — position first, load second. Belt on, brace, stop if the back talks. Raise TM only after a symptom-free cycle." },
+  { key:"deadlift", name:"Deadlift (Thu)",        step:5,   warn:"Belt on, brace hard, stop the instant the back talks." },
 ];
 
-// ---- default starting state (derived 2026-07-20) ----
+// ---- default starting state (v7, 2026-09-29) ----
+// ponytail: w×reps are back-solved so "Derive TM" lands on the v7 TMs — swap in a real set when you test one
 const DEFAULTS = {
   factor: "0.90", inc: "2.5",
-  squat:    { w:90,  reps:8, rir:3, tm:110 },
-  bench:    { w:80,  reps:4, rir:0, tm:80  },
-  deadlift: { w:100, reps:8, rir:0, tm:105 },
-  ohp: 30,
+  squat:    { w:110,  reps:5, rir:0, tm:115 },
+  bench:    { w:92.5, reps:5, rir:0, tm:95  },
+  deadlift: { w:110,  reps:5, rir:0, tm:115 },
+  ohp: 35,
   clean: 70,
   fiveK: "27:00", goalHM: "1:50:00", bw: 97, phase: "base",
 };
@@ -216,11 +218,11 @@ function matrixHTML(tm, inc) {
     const cells = row.pct.map((p, i) => {
       const w = fmt(round(tm * p / 100, inc));
       const cls = i === 2 ? ' class="top"' : '';
-      return `<td${cls}>${w} <span class="est">(${p}%)</span></td>`;
+      return `<td${cls}>${w} ×${row.reps[i]} <span class="est">(${p}%)</span></td>`;
     }).join("");
     return `<tr class="${row.deload ? 'deload' : ''}"><td class="wk">${row.wk}</td>${cells}</tr>`;
   }).join("");
-  return `<table><thead><tr><th></th><th>Set 1 ×5</th><th>Set 2 ×5</th><th>Top ×5</th></tr></thead><tbody>${rows}</tbody></table>`;
+  return `<table><thead><tr><th></th><th>Set 1</th><th>Set 2</th><th>Top</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 function liftCardHTML(cfg) {
@@ -250,6 +252,12 @@ function liftCardHTML(cfg) {
     ${cfg.volLabel ? `<p class="note">${cfg.volLabel}: <b>${vol} kg</b> (${cfg.volPct}% TM).</p>` : ""}
     ${cfg.warn ? `<p class="note warn">⚠️ ${cfg.warn}</p>` : ""}
   </div>`;
+}
+
+function renderOhp() {
+  const w = Number(state.ohp) || 0;
+  $("#ohp").value = w;
+  $("#ohpWeeks").textContent = w ? `→ wk 2–3: ${fmt(w + 2.5)} kg 3×10 · deload: ${fmt(w - 5)} kg 2×8` : "";
 }
 
 function renderCleanRange() {
@@ -287,7 +295,7 @@ function renderAll() {
   factorSel.value = state.factor;
   incSel.value = state.inc;
   $("#lifts").innerHTML = LIFTS.map(liftCardHTML).join("");
-  $("#ohp").value = state.ohp;
+  renderOhp();
   $("#clean").value = state.clean;
   renderCleanRange();
   $("#fiveK").value = state.fiveK;
@@ -327,17 +335,17 @@ function wireLifts() {
 
 factorSel.addEventListener("change", () => { state.factor = factorSel.value; renderAll(); });
 incSel.addEventListener("change",   () => { state.inc = incSel.value; renderAll(); });
-$("#ohp").addEventListener("change", e => { state.ohp = Number(e.target.value); save(); });
+$("#ohp").addEventListener("change", e => { state.ohp = Number(e.target.value); renderOhp(); save(); });
 $("#clean").addEventListener("change", e => { state.clean = Number(e.target.value); renderCleanRange(); save(); });
 $("#fiveK").addEventListener("change",  e => { state.fiveK = e.target.value; renderRunning(); save(); });
 $("#goalHM").addEventListener("change", e => { state.goalHM = e.target.value; renderRunning(); save(); });
 $("#bw").addEventListener("change",     e => { state.bw = Number(e.target.value); renderNutrition(); save(); });
 $("#phase").addEventListener("change",  e => { state.phase = e.target.value; renderNutrition(); save(); });
 document.querySelector("[data-ohp]").addEventListener("click", () => {
-  state.ohp = (Number(state.ohp) || 0) + 2.5; $("#ohp").value = state.ohp; save();
+  state.ohp = (Number(state.ohp) || 0) + 2.5; renderOhp(); save();
 });
 $("#reset").addEventListener("click", () => {
-  if (confirm("Reset all values to the 2026-07-20 starting numbers?")) {
+  if (confirm("Reset all values to the v7 (2026-09-29) starting numbers?")) {
     state = structuredClone(DEFAULTS); renderAll();
   }
 });
@@ -353,6 +361,10 @@ renderAll();
   A(tmFrom(90, 8, 3, 0.90, 2.5) === 110, "squat TM derives to 110");
   A(tmFrom(80, 4, 0, 0.90, 2.5) === 80, "bench TM derives to 80");
   A(round(110 * 0.95, 2.5) === 102.5, "squat wk3 top = 102.5");
+  A(tmFrom(110, 5, 0, 0.90, 2.5) === 115, "v7 squat/deadlift default derives to 115");
+  A(tmFrom(92.5, 5, 0, 0.90, 2.5) === 95, "v7 bench default derives to 95");
+  A(round(115 * 0.95, 2.5) === 107.5 && round(95 * 0.40, 2.5) === 37.5, "v7 sheet: squat wk3 top 107.5, bench deload set 1 37.5");
+  A(round(115 * 0.65, 2.5) === 72.5 && round(95 * 0.65, 2.5) === 60, "v7 sheet: speed squat 72.5, bench volume 60");
   A(parseTime("25:00") === 1500, "parseTime 25:00 = 1500");
   A(parseTime("1:50:00") === 6600, "parseTime 1:50:00 (h:mm:ss) = 6600");
   A(paceStr(313) === "5:13", "paceStr 313 = 5:13");
