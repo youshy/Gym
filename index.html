@@ -3,32 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Training — Calculators</title>
+<title>Training</title>
 <style>
   :root { --bg:#12141a; --card:#1c1f28; --line:#2c313e; --txt:#e7eaf0; --dim:#8b93a7; --accent:#5ac8fa; }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--txt);
-         font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-         padding:24px 16px; max-width:640px; margin:0 auto; }
+  body { margin:0 auto; background:var(--bg); color:var(--txt); max-width:720px; padding:24px 16px;
+         font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   h1 { font-size:22px; margin:0 0 4px; }
-  .sub { color:var(--dim); font-size:13px; margin:0 0 20px; }
-  a.card { display:block; text-decoration:none; color:inherit; background:var(--card);
-           border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:14px; }
-  a.card:hover { border-color:var(--accent); }
-  a.card h2 { font-size:17px; margin:0 0 4px; color:var(--accent); }
-  a.card p { margin:0; color:var(--dim); font-size:13px; }
-  footer { color:var(--dim); font-size:12px; margin-top:8px; text-align:center; }
+  .dim { color:var(--dim); font-size:13px; }
+  ul.dim { padding-left:18px; }
+  nav { display:flex; gap:8px; flex-wrap:wrap; margin:16px 0; }
+  nav button { background:var(--card); color:var(--txt); border:1px solid var(--line); border-radius:8px;
+               padding:8px 12px; font:inherit; cursor:pointer; }
+  nav button.on { border-color:var(--accent); color:var(--accent); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:14px; }
+  h2 { font-size:17px; margin:0 0 8px; color:var(--accent); }
+  h3 { font-size:14px; margin:14px 0 4px; color:var(--dim); text-transform:uppercase; letter-spacing:.05em; }
+  h2 small { color:var(--dim); font-weight:normal; font-size:13px; }
+  table { width:100%; border-collapse:collapse; }
+  td { padding:6px 4px; border-top:1px solid var(--line); vertical-align:top; }
+  td:nth-child(2), td:nth-child(3) { white-space:nowrap; text-align:right; }
+  td:nth-child(3) { font-weight:600; }
+  footer { margin-top:8px; text-align:center; }
+  a { color:var(--accent); }
 </style>
 </head>
 <body>
-<h1>Training — Calculators</h1>
-<p class="sub">Live tools. Numbers save in your browser; nothing leaves the page.</p>
+<h1 id="title">Training</h1>
+<p class="dim" id="updated"></p>
+<nav id="weeks"></nav>
+<main id="days"></main>
+<ul class="dim" id="rules"></ul>
+<footer class="dim">Plan lives in <code>data.json</code> — edit it to change exercises and weights. · <a href="v6/v6-calculator.html">old v6 calculator</a></footer>
+<script>
+// 5/3/1: [set 1, set 2, top set] percent of TM and reps, per week (week 4 = deload)
+const PCT  = [[.65,.75,.85], [.70,.80,.90], [.75,.85,.95], [.40,.50,.60]];
+const REPS = [[5,5,5], [3,3,3], [5,3,1], [5,5,5]];
+const down = x => Math.floor(x / 2.5 + 1e-9) * 2.5; // round down to a loadable plate
+console.assert(down(115*.65) === 72.5 && down(95*.85) === 80 && down(115*.5) === 57.5, '5/3/1 rounding broke');
 
-<a class="card" href="v6/v6-calculator.html">
-  <h2>v6 Training Calculator — Lifts · Running · Fuel →</h2>
-  <p>5's PRO lift TMs and cycle matrices · running paces from your 5k time-trial · carb-cycled nutrition targets by phase.</p>
-</a>
+let data, week = +localStorage.week || 1;
+const kg = v => v === undefined ? '' : typeof v === 'number' ? v + ' kg' : /^[\d.×]+$/.test(v) ? v + ' kg' : v;
 
-<footer>github pages · one source of truth for your loads, paces, and fuel</footer>
+function row(it) {
+  const w = week - 1;
+  if (it.tm) return `<tr><td>${it.name}${it.note ? `<br><span class="dim">${it.note}</span>` : ''}</td>
+    <td class="dim">TM ${it.tm}</td><td>${PCT[w].map((p, i) => `${down(it.tm * p)}×${REPS[w][i]}`).join(' · ')}</td></tr>`;
+  const load = Array.isArray(it.kg) ? it.kg[w] : it.kg;
+  return `<tr><td>${it.name}${it.note ? `<br><span class="dim">${it.note}</span>` : ''}</td>
+    <td>${kg(load)}</td><td>${it.weeks ? it.weeks[w] : ''}</td></tr>`;
+}
+
+function render() {
+  title.textContent = data.title;
+  updated.textContent = 'updated ' + data.updated;
+  weeks.innerHTML = [1, 2, 3, 4].map(n =>
+    `<button data-w="${n}" class="${n === week ? 'on' : ''}">Week ${n}${n === 4 ? ' · deload' : ''}</button>`).join('');
+  days.innerHTML = data.days.map(d =>
+    `<section><h2>${d.day} <small>${d.note || ''}</small></h2><table>${d.items.map(row).join('')}</table>${d.evening ? `<h3>Evening</h3><table>${d.evening.map(row).join('')}</table>` : ''}</section>`).join('');
+  rules.innerHTML = data.rules.map(r => `<li>${r}</li>`).join('');
+}
+
+weeks.onclick = e => { if (e.target.dataset.w) { week = +e.target.dataset.w; localStorage.week = week; render(); } };
+fetch('data.json', { cache: 'no-store' }).then(r => r.json()).then(d => { data = d; render(); })
+  .catch(e => days.textContent = 'Could not load data.json — ' + e);
+</script>
 </body>
 </html>
