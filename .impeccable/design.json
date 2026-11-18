@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T22:00:00Z",
+  "title": "Design System: Training",
+  "extensions": {
+    "colorMeta": {
+      "oxide":       { "role": "primary", "displayName": "Oxide", "canonical": "oklch(50% 0.15 35)", "dark": "oklch(72% 0.14 40)",
+                       "tonalRamp": ["oklch(15% 0.06 35)", "oklch(26% 0.1 35)", "oklch(38% 0.13 35)", "oklch(50% 0.15 35)", "oklch(62% 0.13 35)", "oklch(74% 0.09 35)", "oklch(85% 0.05 35)", "oklch(95% 0.02 35)"] },
+      "oxide-on":    { "role": "neutral", "displayName": "Oxide On", "canonical": "oklch(98% 0.01 75)", "dark": "oklch(18% 0.01 50)" },
+      "chalk":       { "role": "neutral", "displayName": "Chalk", "canonical": "oklch(97.5% 0.008 75)", "dark": "oklch(18% 0.01 50)",
+                       "tonalRamp": ["oklch(15% 0.008 75)", "oklch(26% 0.008 75)", "oklch(38% 0.008 75)", "oklch(50% 0.008 75)", "oklch(62% 0.008 75)", "oklch(74% 0.008 75)", "oklch(86% 0.008 75)", "oklch(97.5% 0.008 75)"] },
+      "chalk-paper": { "role": "neutral", "displayName": "Chalk Paper", "canonical": "oklch(99.3% 0.004 75)", "dark": "oklch(22% 0.012 50)" },
+      "lift-band":   { "role": "neutral", "displayName": "Lift Band", "canonical": "oklch(94.5% 0.022 55)", "dark": "oklch(24% 0.025 45)" },
+      "iron-ink":    { "role": "neutral", "displayName": "Iron Ink", "canonical": "oklch(22% 0.015 50)", "dark": "oklch(94% 0.01 75)" },
+      "pencil":      { "role": "neutral", "displayName": "Pencil", "canonical": "oklch(47% 0.015 50)", "dark": "oklch(72% 0.015 70)" },
+      "rule-line":   { "role": "neutral", "displayName": "Rule Line", "canonical": "oklch(89% 0.01 70)", "dark": "oklch(31% 0.012 50)" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Day name, one per screen." },
+      "load":     { "displayName": "Load", "purpose": "Weight and 5/3/1 sets; the hero of every row." },
+      "title":    { "displayName": "Title", "purpose": "Exercise names and day tabs." },
+      "body":     { "displayName": "Body", "purpose": "Sets x reps, rules list." },
+      "note":     { "displayName": "Note", "purpose": "Coaching notes under exercise names." },
+      "label":    { "displayName": "Label", "purpose": "Uppercase section labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-color", "value": "color .15s, background-color .15s, border-color .15s", "purpose": "Tab and segment selection. Color only, nothing moves." }
+    ],
+    "breakpoints": [
+      { "name": "content-max", "value": "680px" },
+      { "name": "band-rounds", "value": "712px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Day Index Tabs", "kind": "nav", "refersTo": "tab-day",
+      "description": "Sticky full-width day tabs; oxide underline marks the active day, a dot marks today.",
+      "html": "<nav class=\"ds-tabs\"><button aria-pressed=\"false\" class=\"ds-today\">Mon</button><button aria-pressed=\"true\">Tue</button><button aria-pressed=\"false\">Thu</button><button aria-pressed=\"false\">Fri</button><button aria-pressed=\"false\">Notes</button></nav>",
+      "css": ".ds-tabs { display: flex; border-bottom: 1px solid oklch(89% 0.01 70); background: oklch(97.5% 0.008 75); font-family: system-ui, sans-serif; } .ds-tabs button { flex: 1; min-height: 48px; border: 0; border-bottom: 3px solid transparent; background: none; font: 600 16px system-ui, sans-serif; color: oklch(47% 0.015 50); position: relative; cursor: pointer; transition: color .15s, border-color .15s; } .ds-tabs button:hover { color: oklch(22% 0.015 50); } .ds-tabs button[aria-pressed=\"true\"] { color: oklch(22% 0.015 50); border-bottom-color: oklch(50% 0.15 35); } .ds-tabs button:focus-visible { outline: 2px solid oklch(50% 0.15 35); outline-offset: 2px; } .ds-tabs .ds-today::after { content: \"\"; position: absolute; top: 9px; right: calc(50% - 20px); width: 6px; height: 6px; border-radius: 50%; background: oklch(50% 0.15 35); }"
+    },
+    {
+      "name": "Week Segmented Control", "kind": "chip", "refersTo": "week-segment",
+      "description": "Four-way week picker; oxide fill on the active week.",
+      "html": "<nav class=\"ds-seg\"><button aria-pressed=\"false\">Week 1</button><button aria-pressed=\"true\">Week 2</button><button aria-pressed=\"false\">Week 3</button><button aria-pressed=\"false\">Deload</button></nav>",
+      "css": ".ds-seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: oklch(99.3% 0.004 75); border: 1px solid oklch(89% 0.01 70); border-radius: 10px; padding: 3px; } .ds-seg button { border: 0; background: none; border-radius: 7px; min-height: 40px; font: 550 15px system-ui, sans-serif; color: oklch(47% 0.015 50); cursor: pointer; transition: background-color .15s, color .15s; } .ds-seg button:hover { color: oklch(22% 0.015 50); } .ds-seg button[aria-pressed=\"true\"] { background: oklch(50% 0.15 35); color: oklch(98% 0.01 75); } .ds-seg button:focus-visible { outline: 2px solid oklch(50% 0.15 35); outline-offset: 2px; }"
+    },
+    {
+      "name": "Exercise Row", "kind": "custom", "refersTo": "exercise-row",
+      "description": "Ruled row: number, name + pencil note, right-aligned load and sets x reps.",
+      "html": "<ol class=\"ds-list\"><li class=\"ds-row\"><span class=\"ds-n\">4a</span><div><b class=\"ds-name\">Speed bench</b><small class=\"ds-note\">explode off the chest</small></div><div class=\"ds-dose\"><span class=\"ds-load\">60 kg</span><span class=\"ds-sets\">6×3</span></div></li><li class=\"ds-row ds-pair\"><span class=\"ds-n\">4b</span><div><b class=\"ds-name\">Med-ball chest pass</b></div><div class=\"ds-dose\"><span class=\"ds-load ds-word\">4–6 kg</span><span class=\"ds-sets\">6×3</span></div></li></ol>",
+      "css": ".ds-list { list-style: none; margin: 0; padding: 0; font-family: system-ui, sans-serif; color: oklch(22% 0.015 50); } .ds-row { display: grid; grid-template-columns: 2em 1fr auto; gap: 0 10px; padding: 14px 0; border-top: 1px solid oklch(89% 0.01 70); } .ds-row:first-child { border-top-color: transparent; } .ds-pair { border-top-style: dashed; } .ds-n { font-size: 14px; font-weight: 650; color: oklch(47% 0.015 50); } .ds-name { display: block; font-size: 17px; font-weight: 600; } .ds-note { display: block; font-size: 14px; color: oklch(47% 0.015 50); margin-top: 3px; } .ds-dose { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-load { display: block; font-size: 19px; font-weight: 700; } .ds-word { font-size: 14px; font-weight: 500; color: oklch(47% 0.015 50); } .ds-sets { display: block; font-size: 16px; color: oklch(47% 0.015 50); }"
+    },
+    {
+      "name": "Main Lift Row", "kind": "custom", "refersTo": "exercise-row-main",
+      "description": "The day's 5/3/1 lift: the only tinted row, three stacked sets.",
+      "html": "<div class=\"ds-main\"><span class=\"ds-n\">2</span><b class=\"ds-name\">Squat</b><div class=\"ds-dose\"><span class=\"ds-load\">77.5 × 5</span><span class=\"ds-load\">90 × 5</span><span class=\"ds-load\">100 × 5+</span><span class=\"ds-sets\">TM 120</span></div></div>",
+      "css": ".ds-main { display: grid; grid-template-columns: 2em 1fr auto; gap: 0 10px; padding: 16px; background: oklch(94.5% 0.022 55); border-radius: 12px; font-family: system-ui, sans-serif; color: oklch(22% 0.015 50); } .ds-main .ds-n { font-size: 14px; font-weight: 650; color: oklch(47% 0.015 50); } .ds-main .ds-name { font-size: 17px; font-weight: 600; } .ds-main .ds-dose { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-main .ds-load { display: block; font-size: 21px; font-weight: 700; line-height: 1.3; } .ds-main .ds-sets { display: block; font-size: 16px; color: oklch(47% 0.015 50); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Coach's Program Sheet",
+    "overview": "A sheet of paper a good coach hands you, clipped to the rack: ruled lines, a number column, terse notes in pencil. The page reads at arm's length under fluorescent gym light, between sets, with sweaty hands. The load and the sets×reps are the only loud things; everything else is pencil. Density is moderate and vertical. One day per screen, one exercise per ruled row, numbered the way lifters already read programs (1, 2, 3a, 3b). The only persistent chrome is a row of index tabs for the days. No libraries, no web fonts, no decorative motion: it must be readable before the gym wifi finishes thinking.",
+    "keyCharacteristics": [
+      "Light chalk paper by default; a warm dark variant follows the system theme.",
+      "The weight and the sets×reps are the biggest things on every row.",
+      "One accent (oxide red) for \"you are here\": active tab, active week, today.",
+      "Hairline rules and tonal bands instead of cards and shadows.",
+      "Superset pairs shown by numbering (3a/3b) and a dashed rule, never by tags."
+    ],
+    "rules": [
+      { "name": "The Position Rule", "body": "Oxide only answers \"where am I?\" (day, week, today). It never decorates, never colors a number, never fills a row.", "section": "colors" },
+      { "name": "The One Band Rule", "body": "Lift Band appears on exactly one row per day: the 5/3/1 main lift. If two rows are tinted, the hierarchy is gone.", "section": "colors" },
+      { "name": "The Arm's Length Rule", "body": "Nothing a lifter must read mid-set is smaller than 16px. 14px is for notes you read once, before the set.", "section": "typography" },
+      { "name": "The Paper Rule", "body": "If something looks like it floats, it's wrong. Paper doesn't float.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do make the load the largest text on every row (19px / 700, 21px for the main lift).",
+      "Do number exercises 1, 2, 3a, 3b; the ⇄ marker in data.json becomes the a/b pair.",
+      "Do keep tap targets at least 40px (tabs 48px) for sweaty hands.",
+      "Do meet WCAG AA contrast for Pencil on Chalk in both themes.",
+      "Do keep transitions to color only, 150ms."
+    ],
+    "donts": [
+      "Don't use fitness-app neon on black (Strava / Whoop / gym-bro dark UI with lime or orange accents).",
+      "Don't add gamified tracker elements: streaks, badges, progress rings, confetti, motivational copy.",
+      "Don't wrap exercises in cards or add shadows; rows are ruled lines on paper.",
+      "Don't use Oxide on numbers, rows, or decoration (The Position Rule).",
+      "Don't add tags or badges to rows (\"superset\", \"new\"); the numbering already says it.",
+      "Don't add a web font, icon font, or JS library. System fonts only.",
+      "Don't use border-left stripes, gradient text, or glass blur."
+    ]
+  }
+}
