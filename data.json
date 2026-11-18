@@ -1,46 +1,56 @@
 {
-  "title": "v8 — 4 days: Mon · Tue · Thu · Fri",
-  "updated": "2026-11-06",
+  "title": "v9 — strength + power · Mon · Tue · Thu · Fri",
+  "updated": "2026-11-17",
+  "tm": { "squat": 120, "bench": 97.5, "deadlift": 120 },
   "rules": [
-    "Main lifts: 5/3/1 off the Training Max (tm). Weights are computed and rounded DOWN to 2.5 kg. Clean top set, no AMRAP.",
-    "Speed intent: every concentric rep as FAST as possible, warm-ups included. A rep that visibly slows ends the set — power work is never done tired.",
-    "Arms (curls / triceps): LIGHT. 2 sets, stop 3+ reps before failure — pump, not grind.",
+    "Hard cap: 1h15 per session = ≤60 min lifting (warm-up included) + 15 min cardio. Running long → trim accessories, never the power work or the main lift.",
+    "Main lifts: 5/3/1 off the Training Max (tm at the top of data.json). Weights round DOWN to 2.5 kg. + = squat and bench top set, weeks 1–3: keep going while reps stay fast, stop with ~2 in reserve, never grind. Log the reps.",
+    "TM bump per cycle: week-3 + set ≥3 reps → squat +5, bench +2.5 · 1–2 reps → keep the TM. Deadlift has no + set (back): week-3 single fast and pain-free → +5.",
+    "First set last (squat, bench): 3×5 at the first-set weight straight after the main sets, 2 min rest. Skipped on deload.",
+    "Power first, never tired: every concentric rep as FAST as possible. A rep, jump or throw that slows or comes up short ends the set. Full rest between jump/throw sets.",
+    "⇄ = back-to-back with the line above (superset; on Thursday a contrast pair: lift set → jumps/throws within ~15 s → rest).",
+    "Jumps: land quietly and stick it. Week-3 depth jump: step off a 30 cm box, jump the instant you touch down.",
+    "Olympic lifts: build to a weight that stays fast and crisp. Log the top weight. All reps crisp → +2.5 kg next cycle.",
+    "Arms: LIGHT, once a week (Friday). 2 sets, stop 3+ reps before failure.",
     "Evening (2nd part of the day): pullups / chin-ups only. 2 min warm-up (arm swings, scap pulls, dead hang), every rep chest to bar, stop 3+ reps in reserve. Never to failure.",
     "Rest: main sets 2–3 min · secondary barbell 2 min · accessories 60–90 s · supersets (⇄) 60–75 s per pair.",
-    "Every lift day ends with 15 min easy stair stepper (zone 2).",
-    "Next cycle: week-3 targets clean → smallest jump (dumbbell +2 kg, barbell/cable +2.5 kg), TMs +5 squat/deadlift, +2.5 bench."
+    "Cardio closes every session: 15 min bike, easy zone 2 after leg days (least interference with leg power). Tuesday = 8 × 6 s all-out bike sprints, ~90 s easy spin between. Deload week: all easy.",
+    "Next cycle: week-3 targets clean → smallest jump (dumbbell +2 kg, barbell/cable +2.5 kg). Re-test (bottom of the page) on day 1 of every cycle."
   ],
   "days": [
     {
       "day": "Monday",
-      "note": "~53 min",
+      "note": "lower strength · ~58 min + 15 cardio (tightest day — trim the scoop toss first)",
       "items": [
         {"name": "Warm-up: ankle rocks, deep-squat holds, wrist prep, pass-throughs → empty-bar snatch complex"},
-        {"name": "Snatch skill", "note": "~15 min, stop when bar slows"},
-        {"name": "Squat", "tm": 115},
-        {"name": "Romanian Deadlift", "kg": 70, "weeks": ["3×8", "3×9", "3×10", "2×8"]},
-        {"name": "Lateral raises", "kg": 7.5, "weeks": ["3×15", "3×16", "3×18", "2×12"]},
-        {"name": "⇄ Face pulls", "kg": 17.5, "weeks": ["3×10", "3×12", "3×14", "2×10"]},
-        {"name": "Ab-wheel rollout", "kg": "bodyweight", "weeks": ["3×10", "3×11", "3×12", "1×10"]},
-        {"name": "⇄ Landmine rotation (per side)", "kg": "bar + 5 kg", "weeks": ["3×8", "3×9", "3×10", "1×8"], "note": "turn from the hips, arms long · clean 3×10 → +2.5 kg"}
+        {"name": "Snatch (power or full)", "kg": "fast & crisp", "weeks": ["6×2", "6×2", "5×1", "3×2"], "note": "week 3: heavier singles · ~10 min cap · log the top weight"},
+        {"name": "Squat", "tm": "squat", "plus": true},
+        {"name": "Squat — first set last", "tm": "squat", "pct": [0.65, 0.70, 0.75, null], "weeks": ["3×5", "3×5", "3×5", "skip"], "note": "same speed intent as the main sets"},
+        {"name": "Romanian Deadlift", "kg": 75, "weeks": ["3×6", "3×7", "3×8", "2×6"], "note": "heavier, fewer reps than v8 — strength range"},
+        {"name": "Nordic curl", "kg": "bodyweight", "weeks": ["2×3", "2×4", "3×4", "1×3"], "note": "feet under a loaded bar · lower over 3–5 s, push back up with the hands · hamstring armour for jumps · start easy, soreness must not reach Thursday"},
+        {"name": "⇄ Ab-wheel rollout", "kg": "bodyweight", "weeks": ["3×10", "3×11", "3×12", "1×10"]},
+        {"name": "Med-ball rotational scoop toss (per side)", "kg": "4–6 kg", "weeks": ["3×5", "3×5", "3×6", "2×4"], "note": "into the wall, turn from the hips, max speed, full rest · replaces landmine rotation"},
+        {"name": "Bike — easy zone 2", "weeks": ["15 min", "15 min", "15 min", "15 min"]}
       ],
       "evening": [
-        {"name": "Pullups (overhand)", "kg": "bodyweight", "weeks": ["3×5", "3×5", "3×5", "2×3"]}
+        {"name": "Weighted pullups (overhand)", "kg": "+5 kg", "weeks": ["4×3", "4×3", "5×3", "2×3 bw"], "note": "load = 3 reps with ~3 left · all chest-to-bar → +2.5 kg"}
       ]
     },
     {
       "day": "Tuesday",
-      "note": "~54 min",
+      "note": "upper strength · ~55 min + 15 cardio",
       "items": [
-        {"name": "Warm-up: band pull-aparts, arm circles, thoracic openers, 1×10 pushups"},
-        {"name": "Upper plyometrics", "note": "med-ball chest pass / overhead throw / slams / clap pushups"},
-        {"name": "Bench Press", "tm": 95},
-        {"name": "Overhead Press", "kg": [35, 37.5, 37.5, 30], "weeks": ["3×10", "3×10", "3×10", "2×8"], "note": "strict — the size work for shoulders"},
-        {"name": "Incline dumbbell press", "kg": "2×20", "weeks": ["3×10", "3×11", "3×12", "2×10"]},
-        {"name": "Overhead triceps extension (1 DB) — light", "kg": 12, "weeks": ["2×12", "2×12", "2×12", "1×12"]},
-        {"name": "⇄ Incline dumbbell curl — light", "kg": "2×6", "weeks": ["2×12", "2×12", "2×12", "1×12"]},
-        {"name": "Lateral raises", "kg": 7.5, "weeks": ["3×15", "3×16", "3×18", "2×12"]},
-        {"name": "⇄ Face pulls", "kg": 17.5, "weeks": ["3×10", "3×12", "3×14", "2×10"]}
+        {"name": "Warm-up: band pull-aparts, arm circles, thoracic openers, 1×10 pushups → light med-ball throws"},
+        {"name": "Med-ball overhead throw (to the wall)", "kg": "4–6 kg", "weeks": ["4×3", "4×3", "5×3", "2×3"], "note": "throw through the wall, full rest"},
+        {"name": "⇄ Clap push-up", "kg": "bodyweight", "weeks": ["3×3", "3×4", "3×5", "2×3"], "note": "stop when the hands leave the floor less"},
+        {"name": "Bench Press", "tm": "bench", "plus": true},
+        {"name": "Bench — first set last", "tm": "bench", "pct": [0.65, 0.70, 0.75, null], "weeks": ["3×5", "3×5", "3×5", "skip"]},
+        {"name": "Overhead Press", "kg": [37.5, 40, 40, 30], "weeks": ["4×5", "4×5", "4×5", "2×5"], "note": "strict, every rep fast · was 3×10 for size · week 3 = week 2 weight, crisper"},
+        {"name": "Incline dumbbell press", "kg": "2×22", "weeks": ["2×8", "2×9", "2×10", "1×8"]},
+        {"name": "⇄ Face pulls", "kg": 17.5, "weeks": ["3×10", "3×12", "3×14", "2×10"]},
+        {"name": "Lateral raises", "kg": 7.5, "weeks": ["3×15", "3×16", "3×18", "2×12"], "note": "once a week now"},
+        {"name": "⇄ Single-leg calf raise (per leg)", "kg": "bodyweight", "weeks": ["3×10", "3×12", "3×15", "1×10"], "note": "slow down, 2 s pause at the bottom, fast up · Achilles armour for the jumps"},
+        {"name": "Bike — 8 × 6 s sprints", "note": "all-out 6 s, ~90 s easy spin between, easy for the rest · deload: all easy", "weeks": ["15 min", "15 min", "15 min", "15 min easy"]}
       ],
       "evening": [
         {"name": "Chin-ups (underhand)", "kg": "bodyweight", "weeks": ["3×5", "3×5", "3×5", "2×3"]}
@@ -48,37 +58,46 @@
     },
     {
       "day": "Thursday",
-      "note": "~51 min",
+      "note": "power · freshest day after Wednesday off · ~55 min + 15 cardio",
       "items": [
-        {"name": "Warm-up: cat-cow, hip hinges, glute bridges → empty bar ×10 → 60 ×5"},
-        {"name": "Broad jumps", "note": "3×3, full rest, stick the landing — primes the deadlift, keeps a power stimulus on Thursday"},
-        {"name": "Deadlift", "tm": 115, "note": "belt on, stop the instant the back talks"},
-        {"name": "Push press", "kg": [40, 42.5, 42.5, 32.5], "weeks": ["5×3", "5×3", "5×3", "3×3"], "note": "short dip, drive hard with the legs, punch to lockout · week 3 = week 2 weight, faster · 2 min rest"},
-        {"name": "Underhand barbell row", "kg": 60, "weeks": ["3×8", "3×9", "3×10", "2×8"]},
-        {"name": "Lateral raises", "kg": 7.5, "weeks": ["3×15", "3×16", "3×18", "2×12"]},
-        {"name": "⇄ Face pulls", "kg": 17.5, "weeks": ["3×10", "3×12", "3×14", "2×10"]},
-        {"name": "Suitcase carry (per side)", "kg": 32, "weeks": ["3×20 m", "3×25 m", "3×30 m", "1×20 m"]}
+        {"name": "Warm-up: ankle/hip/thoracic mobility, front-rack stretch, glute activation → pogos 2×10 → empty-bar clean complex"},
+        {"name": ["Hurdle hops", "Hurdle hops", "Depth jump (30 cm box)", "Hurdle hops"], "kg": "bodyweight", "weeks": ["3×5", "4×5", "4×3", "2×4"], "note": "hurdle hops: stiff ankles, shortest ground contact · depth jump: step off, jump the instant you land · full rest"},
+        {"name": "Power clean", "kg": "fast & crisp", "weeks": ["5×2", "6×2", "5×1", "3×2"], "note": "week 3: heavier singles · log the top weight"},
+        {"name": "Speed squat", "kg": [75, 75, 75, 57.5], "weeks": ["5×2", "5×2", "5×2", "3×2"], "note": "rack it, walk to the box → 90 s rest after the jumps"},
+        {"name": "⇄ Box jump", "kg": "bodyweight", "weeks": ["5×3", "5×3", "5×3", "3×3"], "note": "within ~15 s of racking the bar · step down"},
+        {"name": "Speed bench", "kg": [60, 60, 60, 47.5], "weeks": ["6×3", "6×3", "6×3", "4×3"], "note": "explode off the chest · 60 s rest after the throws"},
+        {"name": "⇄ Med-ball chest pass (to the wall)", "kg": "4–6 kg", "weeks": ["6×3", "6×3", "6×3", "4×3"]},
+        {"name": "Bulgarian split squat (per leg)", "kg": "2×14", "weeks": ["3×6", "3×7", "3×8", "1×6"], "note": "rear foot on bench, controlled down, drive up hard"},
+        {"name": "⇄ Hanging leg raise", "kg": "bodyweight", "weeks": ["3×10", "3×11", "3×12", "1×10"]},
+        {"name": "Bike — easy zone 2", "weeks": ["15 min", "15 min", "15 min", "15 min"]}
       ],
       "evening": [
-        {"name": "Pullups (overhand) — extra light, grip still tired from deadlift", "kg": "bodyweight", "weeks": ["2×4", "2×4", "2×4", "1×3"]}
+        {"name": "Pullups (overhand)", "kg": "bodyweight", "weeks": ["3×5", "3×5", "3×5", "2×3"]}
       ]
     },
     {
       "day": "Friday",
-      "note": "~55 min",
+      "note": "deadlift + push press · ~52 min + 15 cardio",
       "items": [
-        {"name": "Warm-up: ankle/hip/thoracic mobility, front-rack stretch → pogos → box jumps → empty-bar clean complex"},
-        {"name": "Cleans + lower-body jumps", "note": "low volume, full rest, stop when speed drops"},
-        {"name": "Speed squat", "kg": [72.5, 72.5, 72.5, 57.5], "weeks": ["5×3", "5×3", "5×3", "3×3"], "note": "straight after the jumps, while fresh · 60–90 s rest"},
-        {"name": "Speed bench", "kg": [60, 60, 60, 47.5], "weeks": ["8×3", "8×3", "8×3", "4×3"], "note": "explode off the chest · 45–60 s rest"},
+        {"name": "Warm-up: cat-cow, hip hinges, glute bridges → empty bar ×10 → 60 ×5"},
+        {"name": "Broad jumps", "kg": "bodyweight", "weeks": ["3×3", "3×3", "4×3", "2×2"], "note": "primes the deadlift · full rest, stick the landing · log the best jump"},
+        {"name": "Deadlift", "tm": "deadlift", "note": "belt on, stop the instant the back talks · no + set, no extra sets · back grumpy on the day → trap bar, same weights"},
+        {"name": "Push press", "kg": [42.5, 45, 45, 35], "weeks": ["5×3", "5×3", "5×3", "3×3"], "note": "short dip, drive hard with the legs, punch to lockout · week 3 = week 2 weight, faster · 2 min rest"},
+        {"name": "Underhand barbell row", "kg": 65, "weeks": ["3×6", "3×7", "3×8", "2×6"]},
+        {"name": "⇄ Face pulls", "kg": 17.5, "weeks": ["3×10", "3×12", "3×14", "2×10"]},
+        {"name": "Suitcase carry (per side)", "kg": 32, "weeks": ["3×20 m", "3×25 m", "3×30 m", "1×20 m"]},
         {"name": "Triceps pushdown — light", "kg": 15, "weeks": ["2×12", "2×12", "2×12", "1×12"]},
         {"name": "⇄ Hammer curl — light", "kg": "2×8", "weeks": ["2×12", "2×12", "2×12", "1×12"]},
-        {"name": "Bulgarian split squat (per leg)", "kg": "2×12", "weeks": ["2×8", "2×9", "2×10", "1×8"], "note": "rear foot on bench, controlled down, drive up · clean 2×10 → +2 kg"},
-        {"name": "⇄ Hanging leg raise", "kg": "bodyweight", "weeks": ["3×10", "3×11", "3×12", "1×10"]}
+        {"name": "Bike — easy zone 2", "weeks": ["15 min", "15 min", "15 min", "15 min"]}
       ],
       "evening": [
-        {"name": "Chin-ups (underhand)", "kg": "bodyweight", "weeks": ["3×5", "3×5", "3×5", "2×3"]}
+        {"name": "Chin-ups (underhand) — extra light, grip still tired from deadlift", "kg": "bodyweight", "weeks": ["2×4", "2×4", "2×4", "1×3"]}
       ]
     }
-  ]
+  ],
+  "tests": {
+    "note": "Day 1 of every cycle, after the warm-up, fresh. Best of 3. Add a row to tests.log in data.json.",
+    "columns": ["Date", "Broad jump (cm)", "Vertical (cm)", "Power clean (kg)", "Snatch (kg)", "Strict pullups"],
+    "log": []
+  }
 }
